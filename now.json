@@ -8,7 +8,9 @@
       "config": { "distDir": "public" }
     }
   ],
-  "env": {
-    "CONTENTFUL_ACCESS_TOKEN": "@contentful-api-token"
+  "build": {
+    "env": {
+      "CONTENTFUL_ACCESS_TOKEN": "@pv-contentful-api-token"
+    }
   }
 }
