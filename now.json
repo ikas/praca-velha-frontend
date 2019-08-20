@@ -9,6 +9,6 @@
     }
   ],
   "env": {
-    "CONTENTFUL_API_TOKEN": "@contentful-api-token"
+    "CONTENTFUL_ACCESS_TOKEN": "@contentful-api-token"
   }
 }
