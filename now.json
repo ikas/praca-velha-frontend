@@ -5,10 +5,10 @@
     {
       "src": "package.json",
       "use": "@now/static-build",
-      "config": { "distDir": "public" },
-      "env": {
-        "CONTENTFUL_API_TOKEN": "@contentful-api-token"
-      }
+      "config": { "distDir": "public" }
     }
-  ]
+  ],
+  "env": {
+    "CONTENTFUL_API_TOKEN": "@contentful-api-token"
+  }
 }
