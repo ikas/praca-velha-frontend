@@ -1,67 +1,43 @@
 import React from "react"
-import { Link, graphql } from "gatsby"
+import styled from 'styled-components'
+import { Link } from 'gatsby'
 
-import Layout from "../components/layout"
 import SEO from "../components/seo"
-import { rhythm } from "../utils/typography"
 
-class BlogIndex extends React.Component {
+const Background = styled.div`
+  width: 100%;
+  height: 100vh;
+  background: url('landing-bg.jpeg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+`
+
+const StyledHeader = styled.h1`
+  margin: 0;
+  color: white;
+  margin-bottom: 1rem;
+`
+
+const EnterButton = styled(Link)`
+  color: white;
+  text-decoration: none;
+  box-shadow: none;
+  border: 1px solid white;
+  padding: 0.25rem 2rem;
+`
+
+export default class LandingPage extends React.Component {
   render() {
-    const { data } = this.props
-    const siteTitle = data.site.siteMetadata.title
-    const posts = data.allContentfulPost.edges
-
     return (
-      <Layout location={this.props.location} title={siteTitle}>
+      <Background>
         <SEO title="All posts" />
-        {posts.map(({ node }) => {
-          const title = node.title || node.slug
-          return (
-            <article key={node.slug}>
-              <header>
-                <h3
-                  style={{
-                    marginBottom: rhythm(1 / 4),
-                  }}
-                >
-                  <Link style={{ boxShadow: `none` }} to={node.slug}>
-                    {title}
-                  </Link>
-                </h3>
-              </header>
-              <section>
-                <p
-                  dangerouslySetInnerHTML={{
-                    __html: node.subtitle || node.slug,
-                  }}
-                />
-              </section>
-            </article>
-          )
-        })}
-      </Layout>
+        <StyledHeader>Praça Velha</StyledHeader>
+        <EnterButton to="/blog">Enter</EnterButton>
+      </Background>
     )
   }
 }
-
-export default BlogIndex
-
-export const pageQuery = graphql`
-  query {
-    site {
-      siteMetadata {
-        title
-      }
-    }
-    allContentfulPost {
-      edges {
-        node {
-          title
-          subtitle
-          author
-          slug
-        }
-      }
-    }
-  }
-`
