@@ -87,5 +87,12 @@ module.exports = {
       },
     },
     `@contentful/gatsby-transformer-contentful-richtext`,
+    {
+      resolve: 'gatsby-plugin-i18n',
+      options: {
+        langKeyDefault: 'en',
+        useLangKeyLayout: false,
+      }
+    }
   ],
 }
