@@ -35,11 +35,17 @@ const HeaderAnchors = styled(Anchor)`
   }
 `
 
-export default ({ currentUrl }) => (
+export default ({ menuLinks }) => (
   <Container>
     <Header px={[3, 4]} pt={5}>
-      <HeaderAnchors to="/" className={currentUrl.includes('home') ? 'active' : ''}>Home</HeaderAnchors>
-      <HeaderAnchors to="/about" className={currentUrl.includes('about') ? 'active' : ''}>About</HeaderAnchors>
+      {menuLinks.map(({ node }) => (
+        <HeaderAnchors
+          key={node.id}
+          to={`/${node.slug}`}
+          activeClassName="active"
+          partiallyActive={true}
+        >{node.title}</HeaderAnchors>
+      ))}
     </Header>
   </Container>
 )
