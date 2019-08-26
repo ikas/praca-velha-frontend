@@ -1,7 +1,7 @@
 import React from 'react'
-import { useTranslation } from 'react-i18next'
 import styled from 'styled-components'
 
+import intl from '../../utils/i18n'
 import Copy from '../copy-text'
 
 const Wrapper = styled.div`
@@ -21,27 +21,17 @@ const EnterButton = styled(Copy)`
   }
 `
 
-const changeLanguage = ({ setLocale, i18n, lng }) => {
-  i18n.changeLanguage(lng);
-  setLocale(lng);
-}
-
-const ChangeLanguageButton = ({ setLocale, i18n, lng, label }) => (
-  <EnterButton
-    px={6}
-    py={2}
-    onClick={() => changeLanguage({ setLocale, i18n, lng })}
-  >
+const ChangeLanguageButton = ({ onClick, label }) => (
+  <EnterButton px={6} py={2} onClick={() => onClick()}>
     {label}
   </EnterButton>
 )
 
 export default ({ setLocale }) => {
-  const { i18n } = useTranslation()
   return (
     <Wrapper>
-      <ChangeLanguageButton setLocale={setLocale} i18n={i18n} lng="pt" label="Português" />
-      <ChangeLanguageButton setLocale={setLocale} i18n={i18n} lng="en" label="English" />
+      <ChangeLanguageButton onClick={() => { intl.changeLanguage('pt'); setLocale('pt'); }} label="Português" />
+      <ChangeLanguageButton onClick={() => { intl.changeLanguage('en'); setLocale('en'); }} label="English" />
     </Wrapper>
   )
 }
