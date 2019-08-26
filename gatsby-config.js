@@ -76,6 +76,7 @@ module.exports = {
         langKeyDefault: 'en',
         useLangKeyLayout: false,
       }
-    }
+    },
+    `gatsby-plugin-styled-components`,
   ],
 }
