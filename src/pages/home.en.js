@@ -3,7 +3,6 @@ import { Link, graphql } from "gatsby"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import { rhythm } from "../utils/typography"
 
 export default class HomePage extends React.Component {
   render() {
@@ -21,7 +20,7 @@ export default class HomePage extends React.Component {
               <header>
                 <h3
                   style={{
-                    marginBottom: rhythm(1 / 4),
+                    marginBottom: '1rem',
                   }}
                 >
                   <Link style={{ boxShadow: `none` }} to={node.slug}>

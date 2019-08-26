@@ -3,7 +3,6 @@ import { Link, graphql } from "gatsby"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import { rhythm } from "../utils/typography"
 
 class BlogPostContentfulTemplate extends React.Component {
   render() {
@@ -21,7 +20,7 @@ class BlogPostContentfulTemplate extends React.Component {
           <header>
             <h1
               style={{
-                marginTop: rhythm(1),
+                marginTop: '1rem',
                 marginBottom: 0,
               }}
             >
@@ -31,7 +30,7 @@ class BlogPostContentfulTemplate extends React.Component {
           <section dangerouslySetInnerHTML={{ __html: post.content.childContentfulRichText.html }} />
           <hr
             style={{
-              marginBottom: rhythm(1),
+              marginBottom: '1rem',
             }}
           />
         </article>
