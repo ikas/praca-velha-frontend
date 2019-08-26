@@ -1,7 +1,9 @@
 import React from "react"
 import { ThemeProvider } from 'styled-components'
 
-import Header from '../components/header'
+import Header from './header'
+import GlobalStyle from './global-style'
+
 import theme from '../utils/theme'
 import i18n from '../utils/i18n'
 
@@ -17,6 +19,7 @@ class Layout extends React.Component {
     return (
       <ThemeProvider theme={theme}>
         <>
+          <GlobalStyle />
           <Header currentUrl="home" />
           <main>{children}</main>
           <footer>

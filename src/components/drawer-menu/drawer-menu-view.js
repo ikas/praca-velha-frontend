@@ -11,7 +11,7 @@ const MenuWrapper = styled.div`
   align-items: center;
   justify-content: center;
   flex: 1 0 auto;
-  width: 320px;
+  width: 300px;
 
   & > * {
     margin-bottom: 1.5rem;

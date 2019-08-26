@@ -22,7 +22,7 @@ const Header = styled.header`
 
 const LogoImage = styled.p`
   background: gold;
-  margin-bottom: 0;
+  margin: 0;
 `
 
 export default ({ menuLinks, menuOpen, toggleMenuOpen }) => {
