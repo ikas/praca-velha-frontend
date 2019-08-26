@@ -8,7 +8,7 @@ const RouterLink = styled(Link)`
   ${layout}
   ${color}
   font-family: 'Work Sans', sans-serif;
-  line-height: 1.25rem;
+  line-height: 1.5rem;
   font-size: 1.25rem;
   font-weight: bold;
   text-decoration: underline;
@@ -23,7 +23,7 @@ const Anchor = styled.a`
   ${layout}
   ${color}
   font-family: 'Work Sans', sans-serif;
-  line-height: 1.25rem;
+  line-height: 1.5rem;
   font-size: 1.25rem;
   font-weight: bold;
   text-decoration: underline;

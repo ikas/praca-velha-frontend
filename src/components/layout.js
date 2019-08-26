@@ -3,11 +3,16 @@ import { ThemeProvider } from 'styled-components'
 
 import Header from '../components/header'
 import theme from '../utils/theme'
-import '../utils/i18n'
+import i18n from '../utils/i18n'
 
 class Layout extends React.Component {
   render() {
-    const { children } = this.props
+    const { children, location } = this.props
+
+    const lang = location.pathname.split('/')[1]
+    if (typeof lang !== undefined) {
+      i18n.changeLanguage(lang)
+    }
 
     return (
       <ThemeProvider theme={theme}>

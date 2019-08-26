@@ -5,12 +5,17 @@ import { Drawer } from '@material-ui/core'
 import MenuLink from '../menu-link'
 
 const MenuWrapper = styled.div`
-  background: ${props => props.theme.colors.secondary};
+  background: ${props => props.theme.colors.white};
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   flex: 1 0 auto;
   width: 320px;
+
+  & > * {
+    margin-bottom: 1.5rem;
+  }
 `
 
 export default ({ menuLinks, menuOpen, toggleMenuOpen }) => (

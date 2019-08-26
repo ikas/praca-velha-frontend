@@ -31,6 +31,7 @@
     "i18next": "^17.0.12",
     "prismjs": "^1.17.1",
     "react": "^16.9.0",
+    "react-animated-burgers": "^1.2.7",
     "react-dom": "^16.9.0",
     "react-helmet": "^5.2.1",
     "react-i18next": "^10.12.2",
