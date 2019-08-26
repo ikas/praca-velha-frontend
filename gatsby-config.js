@@ -6,13 +6,10 @@ if (process.env.NODE_ENV !== 'production') {
 
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Starter Blog`,
-    author: `Kyle Mathews`,
-    description: `A starter blog demonstrating what Gatsby can do.`,
-    siteUrl: `https://gatsby-starter-blog-demo.netlify.com/`,
-    social: {
-      twitter: `kylemathews`,
-    },
+    title: `Praça Velha`,
+    author: `Henrique Pacheco`,
+    description: `Frontend for Praça Velha construction company website.`,
+    siteUrl: `https://praca-velha-frontend.ikas.now.sh`,
   },
   plugins: [
     {

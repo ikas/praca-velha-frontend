@@ -18,7 +18,7 @@ const Background = styled.div`
 
 const StyledHeader = styled.h1`
   margin: 0;
-  color: white;
+  color: gold;
   margin-bottom: 1rem;
 `
 
@@ -26,8 +26,8 @@ export default class LandingPage extends React.Component {
   render() {
     return (
       <Background>
-        <SEO title="All posts" />
-        <StyledHeader>Praça Velha</StyledHeader>
+        <SEO title="Choose your language" />
+        <StyledHeader>Welcome to Praça Velha</StyledHeader>
         <LanguageSelector />
       </Background>
     )

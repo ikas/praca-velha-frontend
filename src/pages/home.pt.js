@@ -13,7 +13,7 @@ export default class HomePage extends React.Component {
 
     return (
       <Layout location={this.props.location} title={siteTitle}>
-        <SEO title="All posts" />
+        <SEO title="Início" />
         {posts.map(({ node }) => {
           const title = node.title || node.slug
           return (
