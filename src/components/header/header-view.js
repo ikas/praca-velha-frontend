@@ -26,7 +26,9 @@ const LogoImage = styled.p`
 `
 
 export default ({ menuLinks, menuOpen, toggleMenuOpen }) => {
-  const { t } = useTranslation()
+  const { t, i18n } = useTranslation()
+  const lang = i18n.language
+  const links = menuLinks.filter(({ node }) => node.node_locale.startsWith(lang))
   return (
     <Container>
       <Header px={[3, 4]} pt={5}>
@@ -44,7 +46,7 @@ export default ({ menuLinks, menuOpen, toggleMenuOpen }) => {
         </MenuLink>
       </Header>
 
-      <DrawerMenu menuLinks={menuLinks} menuOpen={menuOpen} toggleMenuOpen={toggleMenuOpen} />
+      <DrawerMenu menuLinks={links} menuOpen={menuOpen} toggleMenuOpen={toggleMenuOpen} />
     </Container>
   )
 }
