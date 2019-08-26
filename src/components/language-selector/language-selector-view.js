@@ -1,4 +1,5 @@
 import React from 'react'
+import { useTranslation } from 'react-i18next'
 import styled from 'styled-components'
 
 const EnterButton = styled.button`
@@ -18,9 +19,12 @@ const EnterButton = styled.button`
   }
 `
 
-export default ({ setLocale }) => (
-  <div>
-    <EnterButton onClick={() => setLocale('en')}>EN</EnterButton>
-    <EnterButton onClick={() => setLocale('pt')}>PT</EnterButton>
-  </div>
-)
+export default ({ setLocale }) => {
+  const { i18n } = useTranslation()
+  return (
+    <div>
+      <EnterButton onClick={() => { i18n.changeLanguage('en'); setLocale('en')}}>EN</EnterButton>
+      <EnterButton onClick={() => { i18n.changeLanguage('pt'); setLocale('pt')}}>PT</EnterButton>
+    </div>
+  )
+}
