@@ -18,21 +18,6 @@ const RouterLink = styled(Link)`
   }
 `
 
-const Anchor = styled.a`
-  ${space}
-  ${layout}
-  ${color}
-  font-family: 'Work Sans', sans-serif;
-  line-height: 1.5rem;
-  font-size: 1.25rem;
-  font-weight: bold;
-  text-decoration: underline;
-
-  &:hover, &:active, &:focus, &:visited {
-    opacity: 0.6;
-  }
-`
-
-export default ({ type = 'Link', ...props }) => {
-  return type === 'Link' ? <RouterLink {...props} /> : <Anchor {...props} />
+export default props => {
+  return <RouterLink {...props} />
 }

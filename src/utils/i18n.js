@@ -7,15 +7,15 @@ const resources = {
   en: {
     translation: {
       "Contacts": "Contacts",
-      "Contacts URL": "en/contacts",
-      "Home URL": "en/home",
+      "Contacts URL": "/en/contacts",
+      "Home URL": "/en/home",
     }
   },
   pt: {
     translation: {
       "Contacts": "Contactos",
-      "Contacts URL": "pt/contactos",
-      "Home URL": "pt/home",
+      "Contacts URL": "/pt/contactos",
+      "Home URL": "/pt/home",
     }
   }
 }
