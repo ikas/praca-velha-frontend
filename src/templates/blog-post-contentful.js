@@ -2,7 +2,6 @@ import React from "react"
 import { Link, graphql } from "gatsby"
 
 import Layout from "../components/layout"
-import SEO from "../components/seo"
 
 class BlogPostContentfulTemplate extends React.Component {
   render() {
@@ -12,10 +11,6 @@ class BlogPostContentfulTemplate extends React.Component {
 
     return (
       <Layout location={this.props.location} title={siteTitle}>
-        <SEO
-          title={post.title}
-          description={post.subtitle}
-        />
         <article>
           <header>
             <h1

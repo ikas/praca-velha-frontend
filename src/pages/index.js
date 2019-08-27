@@ -1,12 +1,9 @@
 import React from "react"
-import { ThemeProvider } from 'styled-components'
 import styled from 'styled-components'
 
-import GlobalStyle from '../components/global-style'
 import Heading from '../components/heading'
 import LanguageSelector from '../components/language-selector'
-import SEO from '../components/seo'
-import theme from '../utils/theme'
+import PageWrapper from '../components/page-wrapper'
 
 const Background = styled.div`
   width: 100%;
@@ -27,14 +24,12 @@ const LandingHeader = styled(Heading)`
 export default class LandingPage extends React.Component {
   render() {
     return (
-      <ThemeProvider theme={theme}>
+      <PageWrapper title="Choose your language">
         <Background>
-          <GlobalStyle />
-          <SEO title="Choose your language" />
           <LandingHeader color="white" mx={2}>Welcome to Praça Velha</LandingHeader>
           <LanguageSelector />
         </Background>
-      </ThemeProvider>
+      </PageWrapper>
     )
   }
 }
