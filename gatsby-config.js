@@ -45,11 +45,11 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `Gatsby Starter Blog`,
-        short_name: `GatsbyJS`,
+        name: `Praça Velha`,
+        short_name: `Praça Velha`,
         start_url: `/`,
-        background_color: `#ffffff`,
-        theme_color: `#663399`,
+        background_color: `#F8F8FF`,
+        theme_color: `#FFBA49`,
         display: `minimal-ui`,
         icon: `static/gatsby-icon.png`,
       },
