@@ -1,5 +1,6 @@
 import React from 'react'
 
+import Footer from '../footer'
 import Header from '../header'
 import PageWrapper from '../page-wrapper'
 
@@ -7,7 +8,7 @@ import i18n from '../../utils/i18n'
 
 export default class Layout extends React.Component {
   render() {
-    const { children, location, title } = this.props
+    const { children, location, title, menuStyle } = this.props
 
     const lang = location.pathname.split('/')[1]
     if (typeof lang !== undefined) i18n.changeLanguage(lang)
@@ -15,13 +16,9 @@ export default class Layout extends React.Component {
     return (
       <PageWrapper title={title}>
         <>
-          <Header currentUrl="home" />
+          <Header currentUrl="home" menuStyle={menuStyle} />
           <main>{children}</main>
-          <footer>
-            © {new Date().getFullYear()}, Built with
-            {` `}
-            <a href="https://www.gatsbyjs.org">Gatsby</a>
-          </footer>
+          <Footer />
         </>
       </PageWrapper>
     )

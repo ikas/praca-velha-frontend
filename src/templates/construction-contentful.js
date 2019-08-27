@@ -3,7 +3,7 @@ import { Link, graphql } from "gatsby"
 
 import Layout from "../components/layout"
 
-class BlogPostContentfulTemplate extends React.Component {
+export default class ConstructionContentfulTemplate extends React.Component {
   render() {
     const post = this.props.data.contentfulPost
     const siteTitle = this.props.data.site.siteMetadata.title
@@ -61,21 +61,21 @@ class BlogPostContentfulTemplate extends React.Component {
   }
 }
 
-export default BlogPostContentfulTemplate
-
 export const pageQuery = graphql`
-  query ContentfulBlogPostBySlug($slug: String!) {
+  query ContentfulConstructionBySlug($slug: String!) {
     site {
       siteMetadata {
         title
         author
       }
     }
-    contentfulPost( slug: { eq: $slug }) {
-      title
-      subtitle
-      author
-      content {
+    contentfulConstruction( slug: { eq: $slug }) {
+      name
+      slug
+      address
+      city
+      country
+      description {
         childContentfulRichText {
           html
         }
