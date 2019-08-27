@@ -6,12 +6,16 @@ import Copy from '../copy-text'
 
 const Wrapper = styled.div`
   display: flex;
+
+  @media(max-width: 544px) {
+    flex-direction: column;
+  }
 `
 
 const EnterButton = styled(Copy)`
   background: ${props => props.theme.colors.white};
   border: 2px solid ${props => props.theme.colors.primary};
-  margin-right: 1rem;
+  margin: 1rem;
   cursor: pointer;
   transition: all 0.3s ease;
   outline: none;

@@ -11,6 +11,7 @@ const Background = styled.div`
   background: url('landing-bg.jpeg');
   background-size: cover;
   background-repeat: no-repeat;
+  background-position: center;
   display: flex;
   flex-direction: column;
   align-items: center;

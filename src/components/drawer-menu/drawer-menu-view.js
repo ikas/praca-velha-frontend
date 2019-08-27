@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import { Drawer } from '@material-ui/core'
+import { useTranslation } from 'react-i18next'
 
 import MenuLink from '../menu-link'
 
@@ -18,17 +19,24 @@ const MenuWrapper = styled.div`
   }
 `
 
-export default ({ menuLinks, menuOpen, toggleMenuOpen }) => (
-  <Drawer open={menuOpen} onClose={() => toggleMenuOpen()}>
-    <MenuWrapper role="presentation" onClick={() => toggleMenuOpen()} onKeyDown={() => toggleMenuOpen()}>
-      {menuLinks.map(({ node }) => (
-        <MenuLink
-          key={node.id}
-          to={`/${node.slug}`}
-          activeClassName="active"
-          partiallyActive={true}
-        >{node.title}</MenuLink>
-      ))}
-    </MenuWrapper>
-  </Drawer>
-)
+export default ({ menuLinks, menuOpen, toggleMenuOpen }) => {
+  const { t } = useTranslation()
+  return (
+    <Drawer open={menuOpen} onClose={() => toggleMenuOpen()}>
+      <MenuWrapper role="presentation" onClick={() => toggleMenuOpen()} onKeyDown={() => toggleMenuOpen()}>
+        {menuLinks.map(({ node }) => (
+          <MenuLink
+            key={node.id}
+            to={`/${node.slug}`}
+            activeClassName="active"
+            partiallyActive={true}
+          >{node.title}</MenuLink>
+        ))}
+
+        <MenuLink to={t('Contacts URL')} activeClassName="active" partiallyActive={true}>
+          {t('Contacts')}
+        </MenuLink>
+      </MenuWrapper>
+    </Drawer>
+  )
+}

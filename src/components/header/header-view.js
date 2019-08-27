@@ -6,9 +6,14 @@ import styled from 'styled-components'
 import { space, layout, color } from 'styled-system'
 
 import Container from '../container'
+import Copy from '../copy-text'
 import DrawerMenu from '../drawer-menu'
-import MenuLink from '../menu-link'
 import theme from '../../utils/theme'
+
+const StyledContainer = styled(Container)`
+  position: absolute;
+  width: 100%;
+`
 
 const Header = styled.header`
   ${space}
@@ -18,11 +23,7 @@ const Header = styled.header`
   align-items: center;
   justify-content: space-between;
   z-index: ${props => props.theme.zIndexes.header};
-`
-
-const LogoImage = styled.p`
-  background: gold;
-  margin: 0;
+  background: transparent;
 `
 
 export default ({ menuLinks, menuOpen, toggleMenuOpen }) => {
@@ -30,23 +31,21 @@ export default ({ menuLinks, menuOpen, toggleMenuOpen }) => {
   const lang = i18n.language
   const links = menuLinks.filter(({ node }) => node.node_locale.startsWith(lang))
   return (
-    <Container>
-      <Header px={[3, 4]} pt={5}>
+    <StyledContainer>
+      <Header px={[3, 4]} py={[4, 5]}>
         <HamburgerSpin
           toggleButton={toggleMenuOpen}
           buttonWidth={32}
           buttonStyle={{ outline: 'none', padding: 0, display: 'inline-flex' }}
-          barColor={theme.colors.primary}
+          barColor={theme.colors.white}
         />
         <Link to={t('Home URL')}>
-          <LogoImage>Logo</LogoImage>
+          <Copy color="white" m={0}>Praça Velha</Copy>
         </Link>
-        <MenuLink to={t('Contacts URL')} activeClassName="active" partiallyActive={true}>
-          {t('Contacts')}
-        </MenuLink>
+        <div style={{ width: '32px' } } />
       </Header>
 
       <DrawerMenu menuLinks={links} menuOpen={menuOpen} toggleMenuOpen={toggleMenuOpen} />
-    </Container>
+    </StyledContainer>
   )
 }

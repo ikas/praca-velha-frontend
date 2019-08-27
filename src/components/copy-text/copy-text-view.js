@@ -10,8 +10,8 @@ const Copy = styled.p`
   ${layout}
   ${color}
   ${fontSize}
-  font-family: 'Work Sans', sans-serif;
-  line-height: 2.06rem;
+  font-family: 'Oswald', sans-serif;
+  line-height: 2.1rem;
   font-weight: normal;
 `
 

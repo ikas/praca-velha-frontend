@@ -7,7 +7,7 @@ const RouterLink = styled(Link)`
   ${space}
   ${layout}
   ${color}
-  font-family: 'Work Sans', sans-serif;
+  font-family: 'Oswald', sans-serif;
   line-height: 1.5rem;
   font-size: 1.25rem;
   font-weight: bold;
