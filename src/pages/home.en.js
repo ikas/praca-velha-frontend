@@ -2,6 +2,7 @@ import React from "react"
 import { Link, graphql } from "gatsby"
 
 import HomeImage from '../components/home-image'
+import HomeSeparator from '../components/home-separator'
 import Layout from "../components/layout"
 
 export default class HomePage extends React.Component {
@@ -13,6 +14,7 @@ export default class HomePage extends React.Component {
     return (
       <Layout location={this.props.location} title={siteTitle}>
         <HomeImage />
+        <HomeSeparator />
         {posts.map(({ node }) => {
           const title = node.title || node.slug
           return (
