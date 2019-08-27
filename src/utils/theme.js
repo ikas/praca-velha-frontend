@@ -8,14 +8,11 @@ breakpoints.xl = breakpoints[3]
 
 export default {
   colors: {
-    primary: '#303D5D',
-    primaryShade1: 'rgba(48, 61, 93, 0.9)',
-    primaryShade2: 'rgba(48, 61, 93, 0.7)',
-    primaryShade3: 'rgba(48, 61, 93, 0.5)',
-    secondary: '#899CBC',
-    tertiary: '#C2D987',
-    white: '#FFFFFF',
-    lightGray: '#EAEAEA',
+    primary: '#FFBA49',
+    secondary: '#001041',
+    white: '#F8F8FF',
+    grey: '#B3B3B3',
+    black: '#222222',
   },
   space: [0, 4, 8, 16, 24, 32, 64, 128],
   breakpoints,

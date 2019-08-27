@@ -6,11 +6,12 @@ export default styled(Anchor)`
   box-shadow: none;
   font-weight: 600;
   text-transform: uppercase;
+  color: ${props => props.theme.colors.white};
 
   &::after {
     content: '';
     display: block;
-    background: ${props => props.theme.colors.primary};
+    background: ${props => props.theme.colors.white};
     width: calc(100% - 10px);
     height: 3px;
     left: 0;
