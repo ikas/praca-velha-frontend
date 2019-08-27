@@ -9,6 +9,19 @@ export default class HeaderContainer extends React.Component {
 
     this.state = {
       open: false,
+      isTopOfPage: true,
+    }
+  }
+
+  componentDidMount() {
+    if (typeof window !== undefined) {
+      window.addEventListener('scroll', () => this.setState({ isTopOfPage: window.scrollY <= 100 }))
+    }
+  }
+
+  componentWillUnmount() {
+    if (typeof window !== undefined) {
+      window.removeEventListener('scroll', () => this.setState({ isTopOfPage: window.scrollY <= 100 }))
     }
   }
 
@@ -33,6 +46,7 @@ export default class HeaderContainer extends React.Component {
           {...this.props}
           menuLinks={data.allContentfulPost.edges}
           menuOpen={this.state.open}
+          isTopOfPage={this.state.isTopOfPage}
           toggleMenuOpen={() => this.setState({ open: !this.state.open })}
         />
       }}

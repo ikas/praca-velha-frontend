@@ -8,6 +8,7 @@ const resources = {
     translation: {
       "Contacts": "Contacts",
       "Contacts URL": "/en/contacts",
+      "Home": "Home",
       "Home URL": "/en/home",
     }
   },
@@ -15,6 +16,7 @@ const resources = {
     translation: {
       "Contacts": "Contactos",
       "Contacts URL": "/pt/contactos",
+      "Home": "Início",
       "Home URL": "/pt/home",
     }
   }

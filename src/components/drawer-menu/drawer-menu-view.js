@@ -6,7 +6,7 @@ import { useTranslation } from 'react-i18next'
 import MenuLink from '../menu-link'
 
 const MenuWrapper = styled.div`
-  background: ${props => props.theme.colors.primary};
+  background: ${props => props.theme.colors.secondary};
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -24,6 +24,10 @@ export default ({ menuLinks, menuOpen, toggleMenuOpen }) => {
   return (
     <Drawer open={menuOpen} onClose={() => toggleMenuOpen()}>
       <MenuWrapper role="presentation" onClick={() => toggleMenuOpen()} onKeyDown={() => toggleMenuOpen()}>
+        <MenuLink to={t('Home URL')} activeClassName="active" partiallyActive={true}>
+          {t('Home')}
+        </MenuLink>
+
         {menuLinks.map(({ node }) => (
           <MenuLink
             key={node.id}
