@@ -17,7 +17,7 @@ export default class Layout extends React.Component {
       <PageWrapper title={title}>
         <>
           <Header currentUrl="home" menuStyle={menuStyle} />
-          <main>{children}</main>
+          {children}
           <Footer />
         </>
       </PageWrapper>

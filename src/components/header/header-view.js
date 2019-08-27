@@ -13,7 +13,7 @@ import theme from '../../utils/theme'
 const BackgroundWrapper = styled.div`
   position: ${props => props.fixed ? 'fixed' : 'absolute'};
   background: ${props => props.menuStyle === 'opaque'
-    ? props.fixed ? props.theme.colors.whiteSoftShade : props.theme.colors.secondary
+    ? props.fixed ? props.theme.colors.primary : props.theme.colors.secondary
     : props.fixed ? props.theme.colors.whiteSoftShade : 'transparent'
   };
   width: 100%;

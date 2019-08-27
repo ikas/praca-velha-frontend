@@ -12,7 +12,7 @@ export default () => {
   return (
     <FooterWrapper>
       <Container>
-        <Copy color="primary" mx={0} my={2}>© Praça Velha, 2019</Copy>
+        <Copy color="primary" px={[3, 4]} py={2}>© Praça Velha, 2019</Copy>
       </Container>
     </FooterWrapper>
   )

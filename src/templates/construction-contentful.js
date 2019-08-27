@@ -1,61 +1,27 @@
-import React from "react"
-import { Link, graphql } from "gatsby"
+import React from 'react'
+import styled from 'styled-components'
+import { graphql } from 'gatsby'
 
-import Layout from "../components/layout"
+import Container from '../components/container'
+import Heading from '../components/heading'
+import Layout from '../components/layout'
+
+const ConstructionWrapper = styled.div`
+  padding-top: 8rem;
+  padding-bottom: 2rem;
+`
 
 export default class ConstructionContentfulTemplate extends React.Component {
   render() {
-    const post = this.props.data.contentfulPost
-    const siteTitle = this.props.data.site.siteMetadata.title
-    const { previous, next } = this.props.pageContext
-
+    const construction = this.props.data.contentfulConstruction
     return (
-      <Layout location={this.props.location} title={siteTitle}>
-        <article>
-          <header>
-            <h1
-              style={{
-                marginTop: '1rem',
-                marginBottom: 0,
-              }}
-            >
-              {post.title}
-            </h1>
-          </header>
-          <section dangerouslySetInnerHTML={{ __html: post.content.childContentfulRichText.html }} />
-          <hr
-            style={{
-              marginBottom: '1rem',
-            }}
-          />
-        </article>
-
-        <nav>
-          <ul
-            style={{
-              display: `flex`,
-              flexWrap: `wrap`,
-              justifyContent: `space-between`,
-              listStyle: `none`,
-              padding: 0,
-            }}
-          >
-            <li>
-              {previous && (
-                <Link to={previous.slug} rel="prev">
-                  ← {previous.title}
-                </Link>
-              )}
-            </li>
-            <li>
-              {next && (
-                <Link to={next.slug} rel="next">
-                  {next.title} →
-                </Link>
-              )}
-            </li>
-          </ul>
-        </nav>
+      <Layout location={this.props.location} title={construction.name} menuStyle="opaque">
+        <Container>
+          <ConstructionWrapper>
+            <Heading>{construction.name}</Heading>
+            <section dangerouslySetInnerHTML={{ __html: construction.description.childContentfulRichText.html }} />
+          </ConstructionWrapper>
+        </Container>
       </Layout>
     )
   }

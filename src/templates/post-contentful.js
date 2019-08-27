@@ -1,13 +1,17 @@
 import React from 'react'
 import styled from 'styled-components'
 import { graphql } from 'gatsby'
+import { space, layout } from 'styled-system'
 
 import Container from '../components/container'
 import Heading from '../components/heading'
 import Layout from '../components/layout'
 
+import theme from '../utils/theme'
+
 const PostWrapper = styled.div`
-  padding-top: 8rem;
+  ${space}
+  ${layout}
 `
 
 export default class PostContentfulTemplate extends React.Component {
@@ -16,9 +20,9 @@ export default class PostContentfulTemplate extends React.Component {
     return (
       <Layout location={this.props.location} title={post.title} menuStyle="opaque">
         <Container>
-          <PostWrapper>
-            <Heading>{post.title}</Heading>
-            <section dangerouslySetInnerHTML={{ __html: post.content.childContentfulRichText.html }} />
+          <PostWrapper px={[3, 4]} py={7}>
+            <Heading color="secondary">{post.title}</Heading>
+            <section style={{ color: theme.colors.secondary }} dangerouslySetInnerHTML={{ __html: post.content.childContentfulRichText.html }} />
           </PostWrapper>
         </Container>
       </Layout>
