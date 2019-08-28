@@ -1,19 +1,16 @@
 import React from 'react'
 import styled from 'styled-components'
 
-import Container from '../container'
 import Copy from '../copy-text'
 
 const FooterWrapper = styled.div`
-  background: ${props => props.theme.colors.secondary};
+  background: ${props => props.theme.colors.primary};
 `
 
 export default () => {
   return (
     <FooterWrapper>
-      <Container>
-        <Copy color="white" px={3} py={2}>© Praça Velha, 2019</Copy>
-      </Container>
+      <Copy color="white" py={3} style={{ textAlign: 'center' }}>© Praça Velha, 2019</Copy>
     </FooterWrapper>
   )
 }

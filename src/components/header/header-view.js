@@ -26,7 +26,7 @@ const Header = styled.header`
   background: transparent;
 `
 
-const getBgColor = ({ isScrolling }) => isScrolling ? theme.colors.secondarySoftShade : theme.colors.secondary
+const getBgColor = ({ isScrolling }) => isScrolling ? theme.colors.primarySoftShade : theme.colors.primary
 const getTextColor = () => theme.colors.white
 
 export default ({
@@ -47,6 +47,7 @@ export default ({
       >
         <Header px={3} py={4}>
           <HamburgerSpin
+            isActive={menuOpen}
             toggleButton={toggleMenuOpen}
             buttonWidth={32}
             buttonStyle={{ outline: 'none', padding: 0, display: 'inline-flex' }}

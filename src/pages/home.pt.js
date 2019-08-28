@@ -28,7 +28,7 @@ export const pageQuery = graphql`
         title
       }
     }
-    allContentfulConstruction(filter: { node_locale: { eq: "pt" }}) {
+    allContentfulConstruction(limit: 3, filter: { node_locale: { eq: "pt" }}) {
       edges {
         node {
           id

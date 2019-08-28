@@ -6,7 +6,7 @@ import { useTranslation } from 'react-i18next'
 import MenuLink from '../menu-link'
 
 const MenuWrapper = styled.div`
-  background: ${props => props.theme.colors.secondary};
+  background: ${props => props.theme.colors.primary};
   display: flex;
   flex-direction: column;
   align-items: center;
