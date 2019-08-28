@@ -1,6 +1,7 @@
 import React from "react"
-import { Link, graphql } from "gatsby"
+import { graphql } from "gatsby"
 
+import HomeDevelopment from '../components/home-development'
 import HomeImage from '../components/home-image'
 import HomeSeparator from '../components/home-separator'
 import Layout from '../components/layout'
@@ -9,37 +10,12 @@ export default class HomePage extends React.Component {
   render() {
     const { data } = this.props
     const siteTitle = data.site.siteMetadata.title
-    const posts = data.allContentfulPost.edges
-
+    const constructions = data.allContentfulConstruction.edges
     return (
       <Layout location={this.props.location} title={siteTitle}>
         <HomeImage />
         <HomeSeparator />
-        {posts.map(({ node }) => {
-          const title = node.title || node.slug
-          return (
-            <article key={node.slug}>
-              <header>
-                <h3
-                  style={{
-                    marginBottom: '1.5rem',
-                  }}
-                >
-                  <Link style={{ boxShadow: `none` }} to={node.slug}>
-                    {title}
-                  </Link>
-                </h3>
-              </header>
-              <section>
-                <p
-                  dangerouslySetInnerHTML={{
-                    __html: node.subtitle || node.slug,
-                  }}
-                />
-              </section>
-            </article>
-          )
-        })}
+        <HomeDevelopment constructions={constructions} />
       </Layout>
     )
   }
@@ -52,13 +28,22 @@ export const pageQuery = graphql`
         title
       }
     }
-    allContentfulPost(filter: { node_locale: { eq: "pt" }}) {
+    allContentfulConstruction(filter: { node_locale: { eq: "pt" }}) {
       edges {
         node {
-          title
-          subtitle
-          author
+          id
+          node_locale
+          name
           slug
+          address
+          city
+          typologies
+          saleStatus
+          mainImage {
+            fluid {
+              ...GatsbyContentfulFluid
+            }
+          }
         }
       }
     }

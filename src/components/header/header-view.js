@@ -13,6 +13,7 @@ const BackgroundWrapper = styled.div`
   position: fixed;
   width: 100%;
   transition: all 0.3s ${props => props.theme.easingFunction};
+  z-index: ${props => props.theme.zIndexes.header};
   ${color}
 `
 
@@ -22,7 +23,6 @@ const Header = styled.header`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  z-index: ${props => props.theme.zIndexes.header};
   background: transparent;
 `
 
