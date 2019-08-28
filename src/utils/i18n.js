@@ -10,7 +10,9 @@ const resources = {
       "Contacts URL": "/en/contacts",
       "Home": "Home",
       "Home URL": "/en/home",
+      "Home Available Heading": "Available",
       "Home Development Heading": "In development",
+      "Home Portfolio Heading": "Portfolio",
     }
   },
   pt: {
@@ -19,7 +21,9 @@ const resources = {
       "Contacts URL": "/pt/contactos",
       "Home": "Início",
       "Home URL": "/pt/home",
+      "Home Available Heading": "Disponíveis",
       "Home Development Heading": "Em desenvolvimento",
+      "Home Portfolio Heading": "Portfólio",
     }
   }
 }

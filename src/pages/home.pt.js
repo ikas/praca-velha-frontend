@@ -1,7 +1,7 @@
 import React from "react"
 import { graphql } from "gatsby"
 
-import HomeDevelopment from '../components/home-development'
+import ConstructionsGrid from '../components/constructions-grid'
 import HomeImage from '../components/home-image'
 import HomeSeparator from '../components/home-separator'
 import Layout from '../components/layout'
@@ -11,11 +11,22 @@ export default class HomePage extends React.Component {
     const { data } = this.props
     const siteTitle = data.site.siteMetadata.title
     const constructions = data.allContentfulConstruction.edges
+
+    const development = constructions.filter(({node}) => node.status === 'Em desenvolvimento').slice(0, 3)
+    const available = constructions.filter(({node}) => node.status === 'Pronto').slice(0, 3)
+    const portfolio = constructions.filter(({node}) => node.status === 'Pronto').slice(0, 3)
     return (
       <Layout location={this.props.location} title={siteTitle}>
         <HomeImage />
         <HomeSeparator />
-        <HomeDevelopment constructions={constructions} />
+
+        <ConstructionsGrid title='Home Development Heading' constructions={development} />
+        <HomeSeparator />
+
+        <ConstructionsGrid title='Home Available Heading' constructions={available}  />
+        <HomeSeparator />
+
+        <ConstructionsGrid title='Home Portfolio Heading' constructions={portfolio} />
       </Layout>
     )
   }
@@ -28,7 +39,7 @@ export const pageQuery = graphql`
         title
       }
     }
-    allContentfulConstruction(limit: 3, filter: { node_locale: { eq: "pt" }}) {
+    allContentfulConstruction(filter: { node_locale: { eq: "pt" }}) {
       edges {
         node {
           id
@@ -38,6 +49,7 @@ export const pageQuery = graphql`
           address
           city
           typologies
+          status
           saleStatus
           mainImage {
             fluid {

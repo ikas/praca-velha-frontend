@@ -19,11 +19,11 @@ const Constructions = styled.div`
   flex-wrap: wrap;
 `
 
-export default ({ constructions }) => {
+export default ({ title, constructions }) => {
   const { t } = useTranslation()
   return (
     <Container>
-      <StyledHeading px={3} my={6} level={4}>{t('Home Development Heading')}</StyledHeading>
+      <StyledHeading px={3} my={6} level={4}>{t(title)}</StyledHeading>
       <Constructions mb={7}>
         {constructions.map(({ node }) => <ConstructionCard {...node} key={node.id} />)}
       </Constructions>
