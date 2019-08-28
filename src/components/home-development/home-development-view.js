@@ -15,6 +15,8 @@ const Constructions = styled.div`
   ${layout}
   ${space}
   display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
 `
 
 export default ({ constructions }) => {
