@@ -27,7 +27,7 @@ export default class LandingPage extends React.Component {
     return (
       <PageWrapper title="Choose your language">
         <Background>
-          <LandingHeader mx={2}>Welcome to Praça Velha</LandingHeader>
+          <LandingHeader mx={2} color="secondary">Welcome to Praça Velha</LandingHeader>
           <LanguageSelector />
         </Background>
       </PageWrapper>

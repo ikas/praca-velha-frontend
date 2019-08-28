@@ -13,8 +13,8 @@ const Wrapper = styled.div`
 `
 
 const EnterButton = styled(Copy)`
-  background: ${props => props.theme.colors.white};
-  border: 2px solid ${props => props.theme.colors.primary};
+  background: ${props => props.theme.colors.secondary};
+  border: none;
   margin: 1rem;
   cursor: pointer;
   transition: all 0.3s ease;
