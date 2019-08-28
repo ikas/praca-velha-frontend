@@ -8,21 +8,22 @@ export default class HeaderContainer extends React.Component {
     super(props)
 
     this.state = {
-      open: false,
-      isTopOfPage: true,
+      scroll: 0,
+      top: 0,
+      height: 0,
     }
+
+    this.handleScroll = this.handleScroll.bind(this)
+  }
+
+  handleScroll() {
+    this.setState({ scroll: window.scrollY });
   }
 
   componentDidMount() {
-    if (typeof window !== undefined) {
-      window.addEventListener('scroll', () => this.setState({ isTopOfPage: window.scrollY <= 100 }))
-    }
-  }
-
-  componentWillUnmount() {
-    if (typeof window !== undefined) {
-      window.removeEventListener('scroll', () => this.setState({ isTopOfPage: window.scrollY <= 100 }))
-    }
+    const el = document.querySelector('div#header-wrapper');
+    this.setState({ top: el.offsetTop, height: el.offsetHeight });
+    window.addEventListener('scroll', this.handleScroll);
   }
 
   render() {
@@ -44,9 +45,9 @@ export default class HeaderContainer extends React.Component {
       render={data => {
         return <HeaderView
           {...this.props}
+          isScrolling={this.state.scroll > this.state.top}
           menuLinks={data.allContentfulPost.edges}
           menuOpen={this.state.open}
-          isTopOfPage={this.state.isTopOfPage}
           toggleMenuOpen={() => this.setState({ open: !this.state.open })}
         />
       }}

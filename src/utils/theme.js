@@ -9,7 +9,9 @@ breakpoints.xl = breakpoints[3]
 export default {
   colors: {
     primary: '#FFBA49',
+    primarySoftShade: 'rgba(255, 186, 73, 0.6)',
     secondary: '#001041',
+    secondarySoftShade: 'rgba(0, 16, 65, 0.6)',
     white: '#F8F8FF',
     whiteSoftShade: 'rgba(248, 248, 255, 0.8)',
     grey: '#B3B3B3',
@@ -18,9 +20,9 @@ export default {
   space: [0, 4, 8, 16, 24, 32, 64, 128],
   breakpoints,
   zIndexes: {
-    header: 1,
+    header: 9999,
     footer: 1,
     cursor: 10,
   },
-  transitionEasingFunction: 'cubic-bezier(0.25, 0.46, 0.45, 0.94)',
+  easingFunction: 'cubic-bezier(0.25, 0.46, 0.45, 0.94)',
 }

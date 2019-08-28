@@ -10,8 +10,8 @@ export default createGlobalStyle`
 
   body {
     font-family: 'Oswald', sans-serif;
-    background: #fff;
-    color: #000;
+    background: ${props => props.theme.colors.white};
+    color: ${props => props.theme.colors.black};
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeSpeed;
     word-wrap: break-word;

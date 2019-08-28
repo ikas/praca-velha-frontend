@@ -18,9 +18,9 @@ export default class PostContentfulTemplate extends React.Component {
   render() {
     const post = this.props.data.contentfulPost
     return (
-      <Layout location={this.props.location} title={post.title} menuStyle="opaque">
+      <Layout location={this.props.location} title={post.title}>
         <Container>
-          <PostWrapper px={[3, 4]} py={7}>
+          <PostWrapper px={[3, 4]} py={[3, 4]}>
             <Heading color="secondary">{post.title}</Heading>
             <section style={{ color: theme.colors.secondary }} dangerouslySetInnerHTML={{ __html: post.content.childContentfulRichText.html }} />
           </PostWrapper>

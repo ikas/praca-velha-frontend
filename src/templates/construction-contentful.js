@@ -15,7 +15,7 @@ export default class ConstructionContentfulTemplate extends React.Component {
   render() {
     const construction = this.props.data.contentfulConstruction
     return (
-      <Layout location={this.props.location} title={construction.name} menuStyle="opaque">
+      <Layout location={this.props.location} title={construction.name}>
         <Container>
           <ConstructionWrapper>
             <Heading>{construction.name}</Heading>
