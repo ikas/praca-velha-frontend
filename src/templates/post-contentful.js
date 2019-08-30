@@ -12,6 +12,8 @@ import theme from '../utils/theme'
 const PostWrapper = styled.div`
   ${space}
   ${layout}
+  padding-top: 81px;
+  padding-bottom: 2rem;
 `
 
 export default class PostContentfulTemplate extends React.Component {
@@ -20,9 +22,12 @@ export default class PostContentfulTemplate extends React.Component {
     return (
       <Layout location={this.props.location} title={post.title}>
         <Container>
-          <PostWrapper px={[3, 4]} py={[3, 4]}>
-            <Heading color="secondary">{post.title}</Heading>
-            <section style={{ color: theme.colors.secondary }} dangerouslySetInnerHTML={{ __html: post.content.childContentfulRichText.html }} />
+          <PostWrapper px={3}>
+            <Heading>{post.title}</Heading>
+            <section
+              style={{ color: theme.colors.primary, lineHeight: '1.8rem' }}
+              dangerouslySetInnerHTML={{ __html: post.content.childContentfulRichText.html }}
+            />
           </PostWrapper>
         </Container>
       </Layout>

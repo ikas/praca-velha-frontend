@@ -51,10 +51,10 @@ export default ({
   <GridWrapper>
     <Construction to={`/${slug}`} mx={3}>
       <Img fluid={mainImage.fluid} />
-      <ConstructionData py={5}>
+      <ConstructionData py={5} px={3}>
         <StyledHeading level={3} mt={0} mb={3}>{name}</StyledHeading>
         <StyledCopy mt={0} mb={1}>{address} | {city}</StyledCopy>
-        <StyledCopy mt={0} mb={1}>{typologies.join(' ')}</StyledCopy>
+        <StyledCopy mt={0} mb={1}>{typologies.join(' + ')}</StyledCopy>
         <StyledCopy my={0}>{saleStatus}</StyledCopy>
       </ConstructionData>
     </Construction>

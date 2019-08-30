@@ -12,9 +12,10 @@ const RouterLink = styled(Link)`
   font-size: 1.25rem;
   font-weight: bold;
   text-decoration: underline;
+  transition: all 0.3s ease;
 
   &:hover, &:active, &:focus, &:visited {
-    opacity: 0.6;
+    opacity: 0.75;
   }
 `
 
