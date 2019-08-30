@@ -17,7 +17,7 @@ export default {
     grey: '#B3B3B3',
     lightGrey: '#f8f8f8',
     black: '#222222',
-    blackSoftShade: 'rgba(34, 34, 34, 0.75)',
+    blackSoftShade: 'rgba(34, 34, 34, 0.5)',
     blackVerySoftShade: 'rgba(34, 34, 34, 0.25)',
   },
   space: [0, 4, 8, 16, 24, 32, 64, 128],
