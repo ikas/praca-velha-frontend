@@ -9,7 +9,7 @@ breakpoints.xl = breakpoints[3]
 export default {
   colors: {
     primary: '#000000',
-    primarySoftShade: 'rgba(0, 0, 0, 0.6)',
+    primarySoftShade: 'rgba(0, 0, 0, 0.8)',
     secondary: '#FFBA49',
     secondarySoftShade: 'rgba(255, 186, 73, 0.6)',
     white: '#F8F8FF',

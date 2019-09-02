@@ -22,7 +22,9 @@ export default class HeaderContainer extends React.Component {
 
   componentDidMount() {
     const el = document.querySelector('div#header-wrapper');
-    this.setState({ top: el.offsetTop, height: el.offsetHeight });
+    if (el) {
+      this.setState({ top: el.offsetTop, height: el.offsetHeight });
+    }
     window.addEventListener('scroll', this.handleScroll);
   }
 
@@ -45,7 +47,7 @@ export default class HeaderContainer extends React.Component {
       render={data => {
         return <HeaderView
           {...this.props}
-          isScrolling={this.state.scroll > this.state.top}
+          isScrolling={this.state.scroll > this.state.top + 200}
           menuLinks={data.allContentfulPost.edges}
           menuOpen={this.state.open}
           toggleMenuOpen={() => this.setState({ open: !this.state.open })}

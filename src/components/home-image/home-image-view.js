@@ -1,6 +1,9 @@
+import React from 'react'
 import styled from 'styled-components'
 
-export default styled.div`
+import LogoAnimated from '../logo-animated'
+
+const Image = styled.div`
   width: 100%;
   height: 100vh;
   background: url('/landing-bg.jpg');
@@ -11,5 +14,12 @@ export default styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  padding-top: 4rem;
 `
+
+export default ({ children, ...props  }) => (
+  <Image {...props}>
+    <LogoAnimated />
+    {children}
+  </Image>
+)

@@ -5,7 +5,6 @@ import { useTranslation } from 'react-i18next'
 import styled from 'styled-components'
 import { space, layout, color } from 'styled-system'
 
-import Copy from '../copy-text'
 import DrawerMenu from '../drawer-menu'
 import theme from '../../utils/theme'
 
@@ -15,6 +14,15 @@ const BackgroundWrapper = styled.div`
   transition: all 0.3s ${props => props.theme.easingFunction};
   z-index: ${props => props.theme.zIndexes.header};
   ${color}
+  overflow-y: hidden;
+
+  &.visible {
+    height: 100px;
+  }
+
+  &.not-visible {
+    height: 0;
+  }
 `
 
 const Header = styled.header`
@@ -26,7 +34,7 @@ const Header = styled.header`
   background: transparent;
 `
 
-const getBgColor = ({ isScrolling }) => isScrolling ? theme.colors.primary : 'transparent'
+const getBgColor = () => theme.colors.primarySoftShade
 const getTextColor = () => theme.colors.white
 
 export default ({
@@ -42,8 +50,8 @@ export default ({
     <>
       <BackgroundWrapper
         id="header-wrapper"
-        className={isScrolling ? "fixed-nav" : ""}
-        bg={getBgColor({ isScrolling })}
+        className={isScrolling ? 'visible' : 'not-visible'}
+        bg={getBgColor()}
       >
         <Header px={3} py={4}>
           <HamburgerSpin
@@ -54,7 +62,7 @@ export default ({
             barColor={getTextColor()}
           />
           <Link to={t('Home URL')}>
-            <Copy color={getTextColor()} m={0}>Praça Velha</Copy>
+            <img src="/logo_horizontal.png" width="120" alt="Praça Velha logo" />
           </Link>
           <div style={{ width: '32px' } } />
         </Header>
