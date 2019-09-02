@@ -11,7 +11,7 @@ export default createGlobalStyle`
   body {
     font-family: 'Roboto', sans-serif;
     background: ${props => props.theme.colors.white};
-    color: ${props => props.theme.colors.black};
+    color: ${props => props.theme.colors.primary};
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeSpeed;
     word-wrap: break-word;
