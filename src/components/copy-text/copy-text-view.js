@@ -10,7 +10,7 @@ const Copy = styled.p`
   ${layout}
   ${color}
   ${fontSize}
-  font-family: 'Comfortaa', sans-serif;
+  font-family: 'Roboto', sans-serif;
   line-height: 2.1rem;
   font-weight: normal;
 `

@@ -19,6 +19,7 @@ const EnterButton = styled(Copy)`
   cursor: pointer;
   transition: all 0.3s ease;
   outline: none;
+  text-align: center;
 
   &:hover {
     transform: scale(1.05);

@@ -35,7 +35,7 @@ export default class LandingPage extends React.Component {
         </VideoBg>
 
         <VideoOverlay>
-          <Heading color="secondary">Welcome to Praça Velha</Heading>
+          <Heading color="secondary" style={{ textAlign: 'center' }}>Welcome to Praça Velha</Heading>
           <LanguageSelector />
         </VideoOverlay>
       </PageWrapper>

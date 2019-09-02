@@ -1,7 +1,7 @@
 import { createGlobalStyle } from 'styled-components'
 
 export default createGlobalStyle`
-  @import url('https://fonts.googleapis.com/css?family=Comfortaa:300,400,600,700&display=swap');
+  @import url('https://fonts.googleapis.com/css?family=Roboto:300,400,600,700&display=swap');
 
   html, body {
     height: 100%;
@@ -9,7 +9,7 @@ export default createGlobalStyle`
   }
 
   body {
-    font-family: 'Comfortaa', sans-serif;
+    font-family: 'Roboto', sans-serif;
     background: ${props => props.theme.colors.white};
     color: ${props => props.theme.colors.black};
     -webkit-font-smoothing: antialiased;
