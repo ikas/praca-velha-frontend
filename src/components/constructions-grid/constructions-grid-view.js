@@ -22,7 +22,7 @@ const Constructions = styled.div`
 export default ({ title, constructions }) => {
   const { t } = useTranslation()
   return (
-    <Container>
+    <Container bg="#eee">
       <StyledHeading px={3} my={6} level={4}>{t(title)}</StyledHeading>
       <Constructions mb={7}>
         {constructions.map(({ node }) => <ConstructionCard {...node} key={node.id} />)}

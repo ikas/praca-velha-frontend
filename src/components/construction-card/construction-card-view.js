@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from 'gatsby'
 import Img from 'gatsby-image'
 import styled from 'styled-components'
-import { layout, space } from 'styled-system'
+import { layout, space, color } from 'styled-system'
 
 import Copy from '../copy-text'
 import Heading from '../heading'
@@ -26,6 +26,7 @@ const Construction = styled(Link)`
 const ConstructionData = styled.div`
   ${layout}
   ${space}
+  ${color}
 `
 
 const GridWrapper = styled.div`
@@ -51,7 +52,7 @@ export default ({
   <GridWrapper>
     <Construction to={`/${slug}`} mx={3}>
       <Img fluid={mainImage.fluid} />
-      <ConstructionData py={5} px={3}>
+      <ConstructionData py={5} px={3} bg="white">
         <StyledHeading level={3} mt={0} mb={3}>{name}</StyledHeading>
         <StyledCopy mt={0} mb={1}>{address} | {city}</StyledCopy>
         <StyledCopy mt={0} mb={1}>{typologies.join(' + ')}</StyledCopy>

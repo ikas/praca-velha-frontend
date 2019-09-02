@@ -26,7 +26,7 @@ const Header = styled.header`
   background: transparent;
 `
 
-const getBgColor = ({ isScrolling }) => isScrolling ? theme.colors.primarySoftShade : theme.colors.primary
+const getBgColor = ({ isScrolling }) => isScrolling ? theme.colors.primary : 'transparent'
 const getTextColor = () => theme.colors.white
 
 export default ({
