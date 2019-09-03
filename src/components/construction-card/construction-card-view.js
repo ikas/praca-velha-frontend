@@ -4,29 +4,13 @@ import Img from 'gatsby-image'
 import styled from 'styled-components'
 import { layout, space, color } from 'styled-system'
 
-import Copy from '../copy-text'
-import Heading from '../heading'
-
-const StyledHeading = styled(Heading)`
-  text-align: center;
-`
-
-const StyledCopy = styled(Copy)`
-  text-align: center;
-`
-
 const Construction = styled(Link)`
   ${layout}
   ${space}
+  ${color}
   display: flex;
   flex-direction: column;
   box-shadow: 0px 0px 20px 0px ${props => props.theme.colors.blackVerySoftShade};
-`
-
-const ConstructionData = styled.div`
-  ${layout}
-  ${space}
-  ${color}
 `
 
 const GridWrapper = styled.div`
@@ -40,24 +24,10 @@ const GridWrapper = styled.div`
   }
 `
 
-export default ({
-  address,
-  city,
-  mainImage,
-  name,
-  saleStatus,
-  slug,
-  typologies,
-}) => (
+export default ({ mainImage, slug }) => (
   <GridWrapper>
-    <Construction to={`/${slug}`} mx={3}>
+    <Construction to={`/${slug}`} mx={3} bg="white" pb={3}>
       <Img fluid={mainImage.fluid} />
-      <ConstructionData py={5} px={3} bg="white">
-        <StyledHeading level={3} mt={0} mb={3}>{name}</StyledHeading>
-        <StyledCopy mt={0} mb={1}>{address} | {city}</StyledCopy>
-        <StyledCopy mt={0} mb={1}>{typologies.join(' + ')}</StyledCopy>
-        <StyledCopy my={0}>{saleStatus}</StyledCopy>
-      </ConstructionData>
     </Construction>
   </GridWrapper>
 )

@@ -12,9 +12,9 @@ export default class HomePage extends React.Component {
     const siteTitle = data.site.siteMetadata.title
     const constructions = data.allContentfulConstruction.edges
 
-    const development = constructions.filter(({node}) => node.status === 'Em desenvolvimento').slice(0, 3)
-    const available = constructions.filter(({node}) => node.status === 'Pronto').slice(0, 3)
-    const portfolio = constructions.filter(({node}) => node.status === 'Pronto').slice(0, 3)
+    const development = constructions.filter(({node}) => node.status === 'WIP').slice(0, 3)
+    const available = constructions.filter(({node}) => node.status === 'Ready').slice(0, 3)
+    const portfolio = constructions.filter(({node}) => node.status === 'Portfolio').slice(0, 3)
     return (
       <Layout location={this.props.location} title={siteTitle}>
         <HomeImage />
