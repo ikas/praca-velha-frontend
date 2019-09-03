@@ -19,6 +19,18 @@ const MenuWrapper = styled.div`
   }
 `
 
+const Languages = styled.div`
+  background: ${props => props.theme.colors.primary};
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  & > * {
+    margin: ${props => props.theme.space[3]}px;
+    margin-bottom: ${props => props.theme.space[4]}px;
+  }
+`
+
 export default ({ menuLinks, menuOpen, toggleMenuOpen }) => {
   const { t } = useTranslation()
   return (
@@ -41,6 +53,11 @@ export default ({ menuLinks, menuOpen, toggleMenuOpen }) => {
           {t('Contacts')}
         </MenuLink>
       </MenuWrapper>
+
+      <Languages>
+        <MenuLink to='/pt/home' activeClassName="active" partiallyActive={true}>PT</MenuLink>
+        <MenuLink to='/en/home' activeClassName="active" partiallyActive={true}>EN</MenuLink>
+      </Languages>
     </Drawer>
   )
 }
