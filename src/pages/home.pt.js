@@ -50,7 +50,6 @@ export const pageQuery = graphql`
           city
           typologies
           status
-          saleStatus
           mainImage {
             fluid {
               ...GatsbyContentfulFluid
