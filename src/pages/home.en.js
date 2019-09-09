@@ -1,45 +1,25 @@
 import React from "react"
-import { Link, graphql } from "gatsby"
+import { graphql } from "gatsby"
 
+import ConstructionsGrid from '../components/constructions-grid'
 import HomeImage from '../components/home-image'
-import HomeSeparator from '../components/home-separator'
-import Layout from "../components/layout"
+import Layout from '../components/layout'
 
 export default class HomePage extends React.Component {
   render() {
     const { data } = this.props
     const siteTitle = data.site.siteMetadata.title
-    const posts = data.allContentfulPost.edges
+    const constructions = data.allContentfulConstruction.edges
 
+    const development = constructions.filter(({node}) => node.status === 'WIP').slice(0, 3)
+    const available = constructions.filter(({node}) => node.status === 'Ready').slice(0, 3)
+    const portfolio = constructions.filter(({node}) => node.status === 'Portfolio').slice(0, 3)
     return (
       <Layout location={this.props.location} title={siteTitle}>
         <HomeImage />
-        <HomeSeparator />
-        {posts.map(({ node }) => {
-          const title = node.title || node.slug
-          return (
-            <article key={node.slug}>
-              <header>
-                <h3
-                  style={{
-                    marginBottom: '1rem',
-                  }}
-                >
-                  <Link style={{ boxShadow: `none` }} to={node.slug}>
-                    {title}
-                  </Link>
-                </h3>
-              </header>
-              <section>
-                <p
-                  dangerouslySetInnerHTML={{
-                    __html: node.subtitle || node.slug,
-                  }}
-                />
-              </section>
-            </article>
-          )
-        })}
+        <ConstructionsGrid title='Home Development Heading' constructions={development} />
+        <ConstructionsGrid title='Home Available Heading' constructions={available}  />
+        <ConstructionsGrid title='Home Portfolio Heading' constructions={portfolio} />
       </Layout>
     )
   }
@@ -52,13 +32,22 @@ export const pageQuery = graphql`
         title
       }
     }
-    allContentfulPost(filter: { node_locale: { eq: "en-US" }}) {
+    allContentfulConstruction(filter: { node_locale: { eq: "en-US" }}) {
       edges {
         node {
-          title
-          subtitle
-          author
+          id
+          node_locale
+          name
           slug
+          address
+          city
+          typologies
+          status
+          mainImage {
+            fluid {
+              ...GatsbyContentfulFluid
+            }
+          }
         }
       }
     }

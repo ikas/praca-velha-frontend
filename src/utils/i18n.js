@@ -11,7 +11,7 @@ const resources = {
       "Home": "Home",
       "Home URL": "/en/home",
       "Home Available Heading": "Available",
-      "Home Development Heading": "In development",
+      "Home Development Heading": "In construction",
       "Home Portfolio Heading": "Portfolio",
     }
   },
@@ -22,7 +22,7 @@ const resources = {
       "Home": "Início",
       "Home URL": "/pt/home",
       "Home Available Heading": "Disponíveis",
-      "Home Development Heading": "Em desenvolvimento",
+      "Home Development Heading": "Em construção",
       "Home Portfolio Heading": "Portfólio",
     }
   }
