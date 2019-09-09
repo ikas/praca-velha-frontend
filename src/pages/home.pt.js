@@ -3,7 +3,6 @@ import { graphql } from "gatsby"
 
 import ConstructionsGrid from '../components/constructions-grid'
 import HomeImage from '../components/home-image'
-import HomeSeparator from '../components/home-separator'
 import Layout from '../components/layout'
 
 export default class HomePage extends React.Component {
@@ -18,14 +17,8 @@ export default class HomePage extends React.Component {
     return (
       <Layout location={this.props.location} title={siteTitle}>
         <HomeImage />
-        <HomeSeparator />
-
         <ConstructionsGrid title='Home Development Heading' constructions={development} />
-        <HomeSeparator />
-
         <ConstructionsGrid title='Home Available Heading' constructions={available}  />
-        <HomeSeparator />
-
         <ConstructionsGrid title='Home Portfolio Heading' constructions={portfolio} />
       </Layout>
     )
