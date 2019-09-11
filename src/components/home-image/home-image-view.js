@@ -11,6 +11,7 @@ const Image = styled.div`
   background-repeat: no-repeat;
   background-position: center;
   background-position-y: top;
+  background-attachment: fixed;
   display: flex;
   flex-direction: column;
   align-items: center;
