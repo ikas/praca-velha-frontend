@@ -48,6 +48,11 @@ export const pageQuery = graphql`
               ...GatsbyContentfulFluid
             }
           }
+          logoWhite {
+            fluid(maxWidth: 400, maxHeight: 250) {
+              src
+            }
+          }
         }
       }
     }
