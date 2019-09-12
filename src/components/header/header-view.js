@@ -17,7 +17,7 @@ const BackgroundWrapper = styled.div`
   overflow-y: hidden;
 
   &.visible {
-    height: 100px;
+    height: 95px;
   }
 
   &.not-visible {
@@ -42,6 +42,7 @@ export default ({
   menuLinks,
   menuOpen,
   toggleMenuOpen,
+  alwaysVisible = false,
 }) => {
   const { t, i18n } = useTranslation()
   const lang = i18n.language
@@ -50,10 +51,10 @@ export default ({
     <>
       <BackgroundWrapper
         id="header-wrapper"
-        className={isScrolling ? 'visible' : 'not-visible'}
+        className={isScrolling || alwaysVisible ? 'visible' : 'not-visible'}
         bg={getBgColor()}
       >
-        <Header px={3} py={4}>
+        <Header p={3}>
           <HamburgerSpin
             isActive={menuOpen}
             toggleButton={toggleMenuOpen}
@@ -62,7 +63,7 @@ export default ({
             barColor={getTextColor()}
           />
           <Link to={t('Home URL')}>
-            <img src="/logo_horizontal.png" width="120" alt="Praça Velha logo" />
+            <img src="/logo_horizontal.svg" width="150" alt="Praça Velha logo" />
           </Link>
           <div style={{ width: '32px' } } />
         </Header>

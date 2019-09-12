@@ -8,7 +8,7 @@ import i18n from '../../utils/i18n'
 
 export default class Layout extends React.Component {
   render() {
-    const { children, location, title } = this.props
+    const { children, location, title, headerAlwaysVisible } = this.props
 
     const lang = location.pathname.split('/')[1]
     if (typeof lang !== undefined) i18n.changeLanguage(lang)
@@ -16,7 +16,7 @@ export default class Layout extends React.Component {
     return (
       <PageWrapper title={title}>
         <>
-          <Header currentUrl="home" />
+          <Header currentUrl="home" alwaysVisible={headerAlwaysVisible} />
           {children}
           <Footer />
         </>

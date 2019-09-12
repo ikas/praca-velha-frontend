@@ -24,6 +24,17 @@ const Constructions = styled.div`
   flex-wrap: wrap;
 `
 
+const GridWrapper = styled.div`
+  ${layout}
+  ${space}
+  width: 33%;
+
+  @media(max-width: ${props => props.theme.breakpoints.md}) {
+    width: 100%;
+    margin-bottom: ${props => props.theme.space[4]}px;
+  }
+`
+
 export default ({ title, constructions }) => {
   const { t } = useTranslation()
   return constructions.length > 0 && (
@@ -32,7 +43,9 @@ export default ({ title, constructions }) => {
       <Container>
         <StyledHeading px={3} my={6} level={4}>{t(title)}</StyledHeading>
         <Constructions mb={7}>
-          {constructions.map(({ node }) => <ConstructionCard {...node} key={node.id} />)}
+          {constructions.map(({ node }) => (
+            <GridWrapper key={node.id}><ConstructionCard {...node} /></GridWrapper>
+          ))}
         </Constructions>
       </Container>
     </BackgroundWrapper>

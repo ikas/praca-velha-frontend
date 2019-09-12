@@ -15,7 +15,7 @@ export default {
     white: '#F8F8FF',
     whiteSoftShade: 'rgba(248, 248, 255, 0.8)',
     grey: '#B3B3B3',
-    lightGrey: '#f8f8f8',
+    lightGrey: '#eee',
     blackSoftShade: 'rgba(34, 34, 34, 0.5)',
     blackVerySoftShade: 'rgba(34, 34, 34, 0.25)',
   },
