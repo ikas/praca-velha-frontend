@@ -32,7 +32,7 @@ const MainImage = styled.div`
   height: 250px;
 `
 
-export default ({ mainImage, logoWhite, slug, typologies, address, city }) => (
+export default ({ mainImage, logoWhite, slug, typologies = [], address, city }) => (
   <Construction to={`/${slug}`} mx={3} bg="black">
     <MainImage imageUrl={mainImage.fluid.src} />
     <Box display="flex" alignItems="center" style={{ minHeight: '150px' }} px={3}>
