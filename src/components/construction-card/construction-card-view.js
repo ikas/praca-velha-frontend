@@ -37,9 +37,9 @@ export default ({ mainImage, logoWhite, slug, typologies = [], address, city }) 
     <MainImage imageUrl={mainImage.fluid.src} />
     <Box display="flex" alignItems="center" style={{ minHeight: '150px' }} px={3}>
       <Box flex={1}>{ logoWhite && <LogoWhite imageUrl={logoWhite.fluid.src} /> }</Box>
-      <Box flex={2}>
+      <Box flex={2} ml={2}>
         <Heading level={3} mt={0} mb={2} color="white">{typologies.join(' | ')}</Heading>
-        <Copy color="white">{address} {city}</Copy>
+        <Copy color="white">{address} | {city}</Copy>
       </Box>
     </Box>
   </Construction>
