@@ -1,11 +1,14 @@
 import React from 'react'
+import { withTranslation } from 'react-i18next';
 import { graphql } from 'gatsby'
 
 import Box from '../components/box'
 import Container from '../components/container'
+import ConstructionMap from '../components/construction-map'
 import Heading from '../components/heading'
 import ImageGallery from '../components/image-gallery'
 import Layout from '../components/layout'
+import Separator from '../components/content-separator'
 
 const Gallery = ({ items }) => (
   <Box width={[1, 1/2]} mb={[4, 0]}>
@@ -18,13 +21,14 @@ const Gallery = ({ items }) => (
 const Info = ({ name, address, city, typologies }) => (
   <Box width={[1, 1/2]}>
     <Heading mt={0} mb={3}>{name}</Heading>
-    <Heading my={3} level={4}>{address} | {city}</Heading>
-    <Heading mt={0} level={4}>{typologies.join(' | ')}</Heading>
+    <Heading my={3} level={5}>{address} | {city}</Heading>
+    <Heading mt={0} level={5}>{typologies.join(' | ')}</Heading>
   </Box>
 )
 
-export default class ConstructionContentfulTemplate extends React.Component {
+class ConstructionContentfulTemplate extends React.Component {
   render() {
+    const { t } = this.props;
     const construction = this.props.data.contentfulConstruction
     const constructionImages = construction.images || [];
     const galleryItems = [
@@ -39,7 +43,17 @@ export default class ConstructionContentfulTemplate extends React.Component {
             <Info {...construction} />
           </Box>
 
-          <Box my={3} px={3}>
+          <Separator my={4} />
+
+          <Box px={3}>
+            <Heading level={4} textAlign="center">{t('Location')}</Heading>
+            <ConstructionMap lat={construction.location.lat} lng={construction.location.lon} />
+          </Box>
+
+          <Separator my={4} />
+
+          <Box px={3}>
+            <Heading level={4} textAlign="center">{t('Description')}</Heading>
             <section dangerouslySetInnerHTML={{ __html: construction.description.childContentfulRichText.html }} />
           </Box>
         </Container>
@@ -47,6 +61,8 @@ export default class ConstructionContentfulTemplate extends React.Component {
     )
   }
 }
+
+export default withTranslation()(ConstructionContentfulTemplate)
 
 export const pageQuery = graphql`
   query ContentfulConstructionBySlug($slug: String!) {
@@ -63,6 +79,10 @@ export const pageQuery = graphql`
       city
       country
       typologies
+      location {
+        lat
+        lon
+      }
       description {
         childContentfulRichText {
           html

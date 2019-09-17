@@ -1,6 +1,8 @@
 import styled from 'styled-components'
 
-export default styled.div`
+import Box from '../box'
+
+export default styled(Box)`
   width: 100%;
   height: 80px;
   background: ${props => props.theme.colors.primary};
