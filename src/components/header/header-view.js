@@ -3,17 +3,17 @@ import { Link } from 'gatsby'
 import { HamburgerSpin } from 'react-animated-burgers'
 import { useTranslation } from 'react-i18next'
 import styled from 'styled-components'
-import { space, layout, color } from 'styled-system'
 
+import Box from '../box'
+import Container from '../container'
 import DrawerMenu from '../drawer-menu'
 import theme from '../../utils/theme'
 
-const BackgroundWrapper = styled.div`
+const Background = styled(Box)`
   position: fixed;
   width: 100%;
   transition: all 0.3s ${props => props.theme.easingFunction};
   z-index: ${props => props.theme.zIndexes.header};
-  ${color}
   overflow-y: hidden;
 
   &.visible {
@@ -25,10 +25,9 @@ const BackgroundWrapper = styled.div`
   }
 `
 
-const Header = styled.header`
-  ${space}
-  ${layout}
+const Header = styled(Container)`
   display: flex;
+  flex-direction: row;
   align-items: center;
   justify-content: space-between;
   background: transparent;
@@ -49,7 +48,7 @@ export default ({
   const links = menuLinks.filter(({ node }) => node.node_locale.startsWith(lang))
   return (
     <>
-      <BackgroundWrapper
+      <Background
         id="header-wrapper"
         className={isScrolling || alwaysVisible ? 'visible' : 'not-visible'}
         bg={getBgColor()}
@@ -67,7 +66,7 @@ export default ({
           </Link>
           <div style={{ width: '32px' } } />
         </Header>
-      </BackgroundWrapper>
+      </Background>
 
       <DrawerMenu menuLinks={links} menuOpen={menuOpen} toggleMenuOpen={toggleMenuOpen} />
     </>
