@@ -26,9 +26,10 @@ const Info = ({ name, address, city, typologies }) => (
 export default class ConstructionContentfulTemplate extends React.Component {
   render() {
     const construction = this.props.data.contentfulConstruction
+    const constructionImages = construction.images || [];
     const galleryItems = [
       { original: construction.mainImage.fluid.src },
-      ...construction.images.map(img => ({ original: img.fluid.src })),
+      ...constructionImages.map(img => ({ original: img.fluid.src })),
     ];
     return (
       <Layout location={this.props.location} title={construction.name} headerAlwaysVisible={true}>
