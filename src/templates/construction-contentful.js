@@ -32,13 +32,13 @@ export default class ConstructionContentfulTemplate extends React.Component {
     ];
     return (
       <Layout location={this.props.location} title={construction.name} headerAlwaysVisible={true}>
-        <Container px={3}>
-          <Box display="flex" flexWrap="wrap" pt={7}>
+        <Container>
+          <Box display="flex" flexWrap="wrap" pt={7} px={3}>
             <Gallery items={galleryItems} />
             <Info {...construction} />
           </Box>
 
-          <Box my={3}>
+          <Box my={3} px={3}>
             <section dangerouslySetInnerHTML={{ __html: construction.description.childContentfulRichText.html }} />
           </Box>
         </Container>
