@@ -35,8 +35,8 @@ class ConstructionContentfulTemplate extends React.Component {
       ...constructionImages.map(img => ({ original: img.fluid.src })),
     ];
     const { location } = construction;
-    const lat = location ? location.lat || 41.55032;
-    const lon = location ? location.lon || -8.42005;
+    const lat = location ? location.lat : 41.55032;
+    const lon = location ? location.lon : -8.42005;
     return (
       <Layout location={this.props.location} title={construction.name} headerAlwaysVisible={true}>
         <Container>
