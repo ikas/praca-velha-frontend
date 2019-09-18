@@ -5,13 +5,13 @@ import { space, layout, color, fontSize } from 'styled-system'
 const Copy = styled.p`
   margin-top: 0;
   margin-bottom: 0;
-  font-size: 1.25rem;
+  font-size: 1rem;
   ${space}
   ${layout}
   ${color}
   ${fontSize}
   font-family: 'Roboto', sans-serif;
-  line-height: 2.1rem;
+  line-height: 1.5rem;
   font-weight: normal;
 `
 
