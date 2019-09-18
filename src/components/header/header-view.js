@@ -53,18 +53,24 @@ export default ({
         className={isScrolling || alwaysVisible ? 'visible' : 'not-visible'}
         bg={getBgColor()}
       >
-        <Header p={3}>
-          <HamburgerSpin
-            isActive={menuOpen}
-            toggleButton={toggleMenuOpen}
-            buttonWidth={32}
-            buttonStyle={{ outline: 'none', padding: 0, display: 'inline-flex' }}
-            barColor={getTextColor()}
-          />
-          <Link to={t('Home URL')}>
-            <img src="/logo_horizontal.svg" width="150" alt="Praça Velha logo" />
-          </Link>
-          <div style={{ width: '32px' } } />
+        <Header>
+          <Box p={3} display="flex">
+            <HamburgerSpin
+              isActive={menuOpen}
+              toggleButton={toggleMenuOpen}
+              buttonWidth={32}
+              buttonStyle={{ outline: 'none', padding: 0, display: 'inline-flex' }}
+              barColor={getTextColor()}
+            />
+          </Box>
+
+          <Box py={3} display="flex">
+            <Link to={t('Home URL')}>
+              <img src="/logo_horizontal.svg" width="150" alt="Praça Velha logo" />
+            </Link>
+          </Box>
+
+          <Box p={3} style={{ width: '32px' }} />
         </Header>
       </Background>
 

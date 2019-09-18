@@ -6,7 +6,7 @@ export default class ConstructionMapContainer extends Component {
     return (
       <LoadScript googleMapsApiKey="AIzaSyClJe3o_eqRfd_5roc72kYNCR0CieFA_OQ">
         <GoogleMap
-          mapContainerStyle={{ height: "400px" }}
+          mapContainerStyle={{ height: "500px" }}
           center={{ lat: this.props.lat, lng: this.props.lng }}
           zoom={16}
           clickableIcons={false}

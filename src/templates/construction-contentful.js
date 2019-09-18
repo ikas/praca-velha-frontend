@@ -8,7 +8,6 @@ import ConstructionMap from '../components/construction-map'
 import Heading from '../components/heading'
 import ImageGallery from '../components/image-gallery'
 import Layout from '../components/layout'
-import Separator from '../components/content-separator'
 
 const Gallery = ({ items }) => (
   <Box width={[1, 1/2]} mb={[4, 0]}>
@@ -43,17 +42,13 @@ class ConstructionContentfulTemplate extends React.Component {
             <Info {...construction} />
           </Box>
 
-          <Separator my={4} />
-
           <Box px={3}>
-            <Heading level={4} textAlign="center">{t('Location')}</Heading>
+            <Heading level={4} textAlign="center" mt={6} mb={4}>{t('Location')}</Heading>
             <ConstructionMap lat={construction.location.lat} lng={construction.location.lon} />
           </Box>
 
-          <Separator my={4} />
-
-          <Box px={3}>
-            <Heading level={4} textAlign="center">{t('Description')}</Heading>
+          <Box px={3} pb={6}>
+            <Heading level={4} textAlign="center" mt={6} mb={4}>{t('Description')}</Heading>
             <section dangerouslySetInnerHTML={{ __html: construction.description.childContentfulRichText.html }} />
           </Box>
         </Container>
