@@ -22,7 +22,9 @@ export default props => (
         <NavButton
           className='image-gallery-left-nav'
           disabled={disabled}
-          onClick={onClick}/>
+          onClick={onClick}
+          aria-label="Image gallery left navigation"
+        />
       )
     }}
     renderRightNav={(onClick, disabled) => {
@@ -30,7 +32,9 @@ export default props => (
         <NavButton
           className='image-gallery-right-nav'
           disabled={disabled}
-          onClick={onClick}/>
+          onClick={onClick}
+          aria-label="Image gallery right navigation"
+        />
       )
     }}
   />
