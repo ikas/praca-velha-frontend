@@ -48,9 +48,9 @@ const Heading3 = styled.h3`
 `
 
 const Heading4 = styled.h4`
-  font-size: 1.625rem;
+  font-size: 2rem;
   font-family: 'Roboto', sans-serif;
-  line-height: 1.625rem;
+  line-height: 2rem;
   font-weight: lighter;
   text-transform: uppercase;
   ${space}
@@ -59,8 +59,8 @@ const Heading4 = styled.h4`
   ${typography}
 
   @media(max-width: 544px) {
-    line-height: 1.25rem;
-    font-size: 1.25rem;
+    line-height: 1.75rem;
+    font-size: 1.75rem;
   }
 `
 

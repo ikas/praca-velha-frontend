@@ -17,11 +17,11 @@ const Background = styled(Box)`
   overflow-y: hidden;
 
   &.visible {
-    height: 95px;
+    opacity: 1;
   }
 
   &.not-visible {
-    height: 0;
+    opacity: 0;
   }
 `
 

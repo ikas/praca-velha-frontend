@@ -1,1 +1,1 @@
-export { default } from './logo-animated-view'
+export { default } from './logo-animated-container'
