@@ -8,6 +8,9 @@ const resources = {
     translation: {
       "Contacts": "Contacts",
       "Contacts URL": "/en/contacts",
+      "Contacts Heading": "Contacts",
+      "Contacts Text": "Need  help? Get in touch.",
+      "Contacts Button": "Send an email",
       "Home": "Home",
       "Home URL": "/en/home",
       "Home Available Heading": "Available",
@@ -21,6 +24,9 @@ const resources = {
     translation: {
       "Contacts": "Contactos",
       "Contacts URL": "/pt/contactos",
+      "Contacts Heading": "Contactos",
+      "Contacts Text": "Precisa de ajuda? Entre em contacto connosco.",
+      "Contacts Button": "Enviar um email",
       "Home": "Início",
       "Home URL": "/pt/home",
       "Home Available Heading": "Disponíveis",
@@ -36,8 +42,8 @@ i18n
   .use(initReactI18next) // passes i18n down to react-i18next
   .init({
     resources,
-    fallbackLng: 'en',
-    lng: "en",
+    fallbackLng: 'pt',
+    lng: "pt",
     keySeparator: false, // we do not use keys in form messages.welcome
     interpolation: {
       escapeValue: false // react already safes from xss
