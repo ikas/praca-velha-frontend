@@ -4,6 +4,7 @@ import { graphql } from 'gatsby'
 
 import Box from '../components/box'
 import Container from '../components/container'
+import ConstructionInfo from '../components/construction-info'
 import ConstructionMap from '../components/construction-map'
 import Heading from '../components/heading'
 import ImageGallery from '../components/image-gallery'
@@ -14,14 +15,6 @@ const Gallery = ({ items }) => (
     <Box mr={[0, 4]}>
       <ImageGallery items={items} showThumbnails={false} showPlayButton={false} />
     </Box>
-  </Box>
-)
-
-const Info = ({ name, address, city, typologies }) => (
-  <Box width={[1, 1/2]}>
-    <Heading mt={0} mb={3}>{name}</Heading>
-    <Heading my={3} level={5}>{address} | {city}</Heading>
-    <Heading mt={0} level={5}>{typologies.join(' | ')}</Heading>
   </Box>
 )
 
@@ -42,16 +35,16 @@ class ConstructionContentfulTemplate extends React.Component {
         <Container>
           <Box display="flex" flexWrap="wrap" pt={7} px={3}>
             <Gallery items={galleryItems} />
-            <Info {...construction} />
+            <ConstructionInfo {...construction} />
           </Box>
 
           <Box px={3}>
-            <Heading level={4} textAlign="center" mt={6} mb={4}>{t('Location')}</Heading>
+            <Heading level={4} textAlign="center" mt={6} mb={4}>{t('Construction Location Heading')}</Heading>
             <ConstructionMap lat={lat} lng={lon} />
           </Box>
 
           <Box px={3} pb={6}>
-            <Heading level={4} textAlign="center" mt={6} mb={4}>{t('Description')}</Heading>
+            <Heading level={4} textAlign="center" mt={6} mb={4}>{t('Construction Description Heading')}</Heading>
             <section dangerouslySetInnerHTML={{ __html: construction.description.childContentfulRichText.html }} />
           </Box>
         </Container>
