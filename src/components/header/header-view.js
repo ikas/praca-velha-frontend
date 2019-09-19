@@ -33,7 +33,7 @@ const Header = styled(Container)`
   background: transparent;
 `
 
-const getBgColor = () => theme.colors.primarySoftShade
+const getBgColor = isScrolling => !isScrolling ? theme.colors.primary : theme.colors.primarySoftShade
 const getTextColor = () => theme.colors.white
 
 export default ({
@@ -51,7 +51,7 @@ export default ({
       <Background
         id="header-wrapper"
         className={isScrolling || alwaysVisible ? 'visible' : 'not-visible'}
-        bg={getBgColor()}
+        bg={getBgColor(isScrolling)}
       >
         <Header>
           <Box p={3} display="flex">
