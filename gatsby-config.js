@@ -1,4 +1,5 @@
 const dotenv = require('dotenv')
+const path = require('path')
 
 if (process.env.NODE_ENV !== 'production') {
   dotenv.config()
@@ -12,6 +13,13 @@ module.exports = {
     siteUrl: `https://praca-velha-frontend.ikas.now.sh`,
   },
   plugins: [
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `static`,
+        path: path.join(__dirname, `static`),
+      },
+    },
     {
       resolve: `gatsby-transformer-remark`,
       options: {
