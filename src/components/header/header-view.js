@@ -66,7 +66,7 @@ export default ({
 
           <Box py={3} display="flex">
             <Link to={t('Home URL')}>
-              <img src="/logo_horizontal.svg" width="150" alt="Praça Velha logo" />
+              <img src="/logo_horizontal.svg" width="100" alt="Praça Velha logo" />
             </Link>
           </Box>
 
