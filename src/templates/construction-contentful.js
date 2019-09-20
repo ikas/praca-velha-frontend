@@ -4,6 +4,7 @@ import { graphql } from 'gatsby'
 
 import Box from '../components/box'
 import Container from '../components/container'
+import ConstructionLogoHighlight from '../components/construction/logo-highlight'
 import ConstructionImage from '../components/construction/image'
 import ConstructionInfo from '../components/construction-info'
 import ConstructionMap from '../components/construction-map'
@@ -34,7 +35,10 @@ class ConstructionContentfulTemplate extends React.Component {
     return (
       <Layout location={this.props.location} title={construction.name} headerAlwaysVisible={true}>
         <Container>
-          <ConstructionImage image={construction.mainImage.fluid} />
+          <ConstructionImage image={construction.mainImage.fluid}>
+            <ConstructionLogoHighlight logo={construction.logoWhite.fixed} />
+          </ConstructionImage>
+
           <Box display="flex" flexWrap="wrap" pt={7} px={3}>
             <Gallery items={galleryItems} />
             <ConstructionInfo {...construction} />
@@ -89,6 +93,11 @@ export const pageQuery = graphql`
       mainImage {
         fluid {
           ...GatsbyContentfulFluid
+        }
+      }
+      logoWhite {
+        fixed(height: 150) {
+          ...GatsbyContentfulFixed
         }
       }
     }

@@ -13,7 +13,7 @@ const Image = styled(BackgroundImage)`
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-top: 4rem;
+  justify-content: flex-end;
 `
 
 export default ({ children, image, ...props  }) => (

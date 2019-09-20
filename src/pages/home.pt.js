@@ -49,8 +49,8 @@ export const pageQuery = graphql`
             }
           }
           logoWhite {
-            fluid(maxWidth: 400, maxHeight: 250) {
-              src
+            fixed(height: 100) {
+              ...GatsbyContentfulFixed
             }
           }
         }
