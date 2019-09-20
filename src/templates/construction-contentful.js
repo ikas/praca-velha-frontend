@@ -6,7 +6,7 @@ import Box from '../components/box'
 import Container from '../components/container'
 import ConstructionLogoHighlight from '../components/construction/logo-highlight'
 import ConstructionImage from '../components/construction/image'
-import ConstructionInfo from '../components/construction-info'
+import ConstructionInfo from '../components/construction/info'
 import ConstructionMap from '../components/construction-map'
 import Heading from '../components/heading'
 import ImageGallery from '../components/image-gallery'
@@ -39,9 +39,10 @@ class ConstructionContentfulTemplate extends React.Component {
             <ConstructionLogoHighlight logo={construction.logoWhite.fixed} />
           </ConstructionImage>
 
+          <ConstructionInfo {...construction} />
+
           <Box display="flex" flexWrap="wrap" pt={7} px={3}>
             <Gallery items={galleryItems} />
-            <ConstructionInfo {...construction} />
           </Box>
 
           <Box px={3}>
