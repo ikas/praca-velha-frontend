@@ -47,11 +47,6 @@ class ConstructionContentfulTemplate extends React.Component {
           <Heading level={4} textAlign="center" mt={6} mb={4}>{t('Construction Location Heading')}</Heading>
           <ConstructionMap lat={lat} lng={lon} />
         </Box>
-
-        <Box px={3} pb={6}>
-          <Heading level={4} textAlign="center" mt={6} mb={4}>{t('Construction Description Heading')}</Heading>
-          <section dangerouslySetInnerHTML={{ __html: construction.description.childContentfulRichText.html }} />
-        </Box>
       </Layout>
     )
   }
@@ -78,7 +73,12 @@ export const pageQuery = graphql`
         lat
         lon
       }
-      description {
+      firstDescription {
+        childContentfulRichText {
+          html
+        }
+      }
+      secondDescription {
         childContentfulRichText {
           html
         }
