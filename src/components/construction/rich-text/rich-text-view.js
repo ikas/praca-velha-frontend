@@ -12,6 +12,6 @@ const StyledBox = styled(Box)`
   }
 `
 
-export default ({ richText, textAlign = 'left' }) => (
-  <StyledBox dangerouslySetInnerHTML={{ __html: richText.childContentfulRichText.html }} textAlign={textAlign} />
-)
+export default ({ richText, textAlign = 'left' }) => richText
+  ? <StyledBox dangerouslySetInnerHTML={{ __html: richText.childContentfulRichText.html }} textAlign={textAlign} />
+  : null

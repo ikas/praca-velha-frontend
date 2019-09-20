@@ -23,7 +23,7 @@ export default ({ name, address, city, typologies, secondaryImage, firstDescript
   <Box bg="primary">
     <StyledContainer py={7}>
       <Box mx={4} my={4} width="45%">
-        <StyledImage fixed={secondaryImage.fixed} />
+        { secondaryImage && <StyledImage fixed={secondaryImage.fixed} /> }
       </Box>
       <Box mx={4} my={4} width="45%" display="flex" alignItems="center" justifyContent="center">
         <RichText textAlign="right" richText={firstDescription} />
