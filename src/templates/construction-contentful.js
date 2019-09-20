@@ -3,7 +3,6 @@ import { withTranslation } from 'react-i18next';
 import { graphql } from 'gatsby'
 
 import Box from '../components/box'
-import Container from '../components/container'
 import ConstructionLogoHighlight from '../components/construction/logo-highlight'
 import ConstructionImage from '../components/construction/image'
 import ConstructionInfo from '../components/construction/info'
@@ -34,27 +33,25 @@ class ConstructionContentfulTemplate extends React.Component {
     const lon = location ? location.lon : -8.42005;
     return (
       <Layout location={this.props.location} title={construction.name} headerAlwaysVisible={true}>
-        <Container>
-          <ConstructionImage image={construction.mainImage.fluid}>
-            <ConstructionLogoHighlight logo={construction.logoWhite.fixed} />
-          </ConstructionImage>
+        <ConstructionImage image={construction.mainImage.fluid}>
+          <ConstructionLogoHighlight logo={construction.logoWhite.fixed} />
+        </ConstructionImage>
 
-          <ConstructionInfo {...construction} />
+        <ConstructionInfo {...construction} />
 
-          <Box display="flex" flexWrap="wrap" pt={7} px={3}>
-            <Gallery items={galleryItems} />
-          </Box>
+        <Box display="flex" flexWrap="wrap" pt={7} px={3}>
+          <Gallery items={galleryItems} />
+        </Box>
 
-          <Box px={3}>
-            <Heading level={4} textAlign="center" mt={6} mb={4}>{t('Construction Location Heading')}</Heading>
-            <ConstructionMap lat={lat} lng={lon} />
-          </Box>
+        <Box px={3}>
+          <Heading level={4} textAlign="center" mt={6} mb={4}>{t('Construction Location Heading')}</Heading>
+          <ConstructionMap lat={lat} lng={lon} />
+        </Box>
 
-          <Box px={3} pb={6}>
-            <Heading level={4} textAlign="center" mt={6} mb={4}>{t('Construction Description Heading')}</Heading>
-            <section dangerouslySetInnerHTML={{ __html: construction.description.childContentfulRichText.html }} />
-          </Box>
-        </Container>
+        <Box px={3} pb={6}>
+          <Heading level={4} textAlign="center" mt={6} mb={4}>{t('Construction Description Heading')}</Heading>
+          <section dangerouslySetInnerHTML={{ __html: construction.description.childContentfulRichText.html }} />
+        </Box>
       </Layout>
     )
   }
@@ -94,6 +91,11 @@ export const pageQuery = graphql`
       mainImage {
         fluid {
           ...GatsbyContentfulFluid
+        }
+      }
+      secondaryImage {
+        fixed(height: 500) {
+          ...GatsbyContentfulFixed
         }
       }
       logoWhite {

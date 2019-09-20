@@ -17,7 +17,7 @@ const Image = styled(BackgroundImage)`
 `
 
 export default ({ children, image, ...props  }) => (
-  <Image fluid={image} backgroundColor={`#040e18`} {...props}>
+  <Image fluid={image} {...props}>
     {children}
   </Image>
 )
