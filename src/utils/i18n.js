@@ -17,7 +17,7 @@ const resources = {
       "Home Development Heading": "In construction",
       "Home Portfolio Heading": "Portfolio",
       "Construction Location Heading": "Location",
-      "Construction Description Heading": "Description",
+      "Construction Gallery Heading": "The construction",
     }
   },
   pt: {
@@ -33,7 +33,7 @@ const resources = {
       "Home Development Heading": "Em construção",
       "Home Portfolio Heading": "Portfólio",
       "Construction Location Heading": "Localização",
-      "Construction Description Heading": "Descrição",
+      "Construction Gallery Heading": "O empreendimento",
     }
   }
 }
