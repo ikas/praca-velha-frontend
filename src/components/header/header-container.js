@@ -28,6 +28,10 @@ export default class HeaderContainer extends React.Component {
     window.addEventListener('scroll', this.handleScroll);
   }
 
+  componentWillUnmount() {
+    window.removeEventListener('scroll', this.handleScroll);
+  }
+
   render() {
     return <StaticQuery
       query={graphql`
