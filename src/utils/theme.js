@@ -22,9 +22,7 @@ export default {
   space: [0, 3, 6, 12, 18, 24, 48, 96],
   breakpoints,
   zIndexes: {
-    header: 9999,
-    footer: 1,
-    cursor: 10,
+    header: 11,
   },
   easingFunction: 'cubic-bezier(0.25, 0.46, 0.45, 0.94)',
 }
