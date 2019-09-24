@@ -2,11 +2,11 @@ import React from 'react'
 import { useTranslation } from 'react-i18next'
 import styled from 'styled-components'
 
-import Box from '../box'
-import Container from '../container'
-import ConstructionCard from '../construction-card'
-import Heading from '../heading'
-import ContentSeparator from '../content-separator'
+import Box from '../../box'
+import Container from '../../container'
+import ConstructionCard from '../card'
+import Heading from '../../heading'
+import ContentSeparator from '../../content-separator'
 
 const StyledHeading = styled(Heading)`
   text-align: center;

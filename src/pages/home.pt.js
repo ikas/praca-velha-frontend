@@ -1,7 +1,7 @@
 import React from "react"
 import { graphql } from "gatsby"
 
-import ConstructionsGrid from '../components/constructions-grid'
+import ConstructionsGrid from '../components/construction/grid'
 import HomeImage from '../components/home-image'
 import Layout from '../components/layout'
 

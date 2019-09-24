@@ -7,7 +7,7 @@ import ConstructionLogoHighlight from '../components/construction/logo-highlight
 import ConstructionImage from '../components/construction/image'
 import ConstructionInfo from '../components/construction/info'
 import ConstructionGallery from '../components/construction/gallery'
-import ConstructionMap from '../components/construction-map'
+import ConstructionMap from '../components/construction/map'
 import Heading from '../components/heading'
 import Layout from '../components/layout'
 

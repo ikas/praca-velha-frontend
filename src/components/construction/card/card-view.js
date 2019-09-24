@@ -3,10 +3,10 @@ import { Link } from 'gatsby'
 import styled from 'styled-components'
 import { layout, space, color } from 'styled-system'
 
-import Box from '../box'
-import Copy from '../copy-text'
-import Heading from '../heading'
-import Logo from '../construction/logo'
+import Box from '../../box'
+import Copy from '../../copy-text'
+import Heading from '../../heading'
+import Logo from '../logo'
 
 const Construction = styled(Link)`
   ${layout}
