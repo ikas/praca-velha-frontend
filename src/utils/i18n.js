@@ -6,6 +6,8 @@ import { initReactI18next } from "react-i18next"
 const resources = {
   en: {
     translation: {
+      "About": "About us",
+      "About URL": "/en/about",
       "Contacts": "Contacts",
       "Contacts URL": "/en/contacts",
       "Contacts Heading": "Contacts",
@@ -22,6 +24,8 @@ const resources = {
   },
   pt: {
     translation: {
+      "About": "Sobre nós",
+      "About URL": "/pt/sobre-nos",
       "Contacts": "Contactos",
       "Contacts URL": "/pt/contactos",
       "Contacts Heading": "Contactos",

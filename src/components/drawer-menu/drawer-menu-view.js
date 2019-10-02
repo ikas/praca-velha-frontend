@@ -31,32 +31,32 @@ const Languages = styled.div`
   }
 `
 
+const MenuItem = ({ label, to, ...props }) => (
+  <MenuLink to={to} activeClassName="active" partiallyActive={true} {...props}>
+    {label}
+  </MenuLink>
+)
+
 export default ({ menuLinks, menuOpen, toggleMenuOpen }) => {
   const { t } = useTranslation()
   return (
     <Drawer open={menuOpen} onClose={() => toggleMenuOpen()}>
       <MenuWrapper role="presentation" onClick={() => toggleMenuOpen()} onKeyDown={() => toggleMenuOpen()}>
-        <MenuLink to={t('Home URL')} activeClassName="active" partiallyActive={true}>
-          {t('Home')}
-        </MenuLink>
+        <MenuItem to={t('Home URL')} label={t('Home')} />
 
-        {menuLinks.map(({ node }) => (
-          <MenuLink
-            key={node.id}
-            to={`/${node.slug}`}
-            activeClassName="active"
-            partiallyActive={true}
-          >{node.title}</MenuLink>
-        ))}
+        { menuLinks.map(({ node }) => <MenuItem
+          key={node.id}
+          to={`/${node.slug}`}
+          label={node.title} />
+        )}
 
-        <MenuLink to={t('Contacts URL')} activeClassName="active" partiallyActive={true}>
-          {t('Contacts')}
-        </MenuLink>
+        <MenuItem to={t('About URL')} label={t('About')} />
+        <MenuItem to={t('Contacts URL')} label={t('Contacts')} />
       </MenuWrapper>
 
       <Languages>
-        <MenuLink to='/pt/home' activeClassName="active" partiallyActive={true}>PT</MenuLink>
-        <MenuLink to='/en/home' activeClassName="active" partiallyActive={true}>EN</MenuLink>
+        <MenuItem to='/pt/home' label='PT' />
+        <MenuItem to='/en/home' label='EN' />
       </Languages>
     </Drawer>
   )
