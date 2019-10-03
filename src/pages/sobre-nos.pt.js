@@ -4,6 +4,7 @@ import { graphql } from "gatsby";
 
 import AboutImage from '../components/about/image';
 import AboutLogoText from '../components/about/logo-text';
+import AboutMission from '../components/about/mission';
 import AboutTextInBlack from '../components/about/text-in-black';
 import Box from '../components/box';
 import Heading from '../components/heading';
@@ -32,6 +33,7 @@ export default class HomePage extends React.Component {
 
           <AboutLogoText />
           <AboutTextInBlack />
+          <AboutMission />
         </WhiteBg>
       </Layout>
     )
