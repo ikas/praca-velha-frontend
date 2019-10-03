@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { space, layout, color, fontSize } from 'styled-system'
+import { space, layout, color, typography } from 'styled-system'
 
 const Copy = styled.p`
   margin-top: 0;
@@ -9,7 +9,7 @@ const Copy = styled.p`
   ${space}
   ${layout}
   ${color}
-  ${fontSize}
+  ${typography}
   font-family: 'Roboto', sans-serif;
   line-height: 1.5rem;
   font-weight: normal;
