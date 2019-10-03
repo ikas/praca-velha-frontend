@@ -2,6 +2,7 @@ import React from "react";
 import styled from 'styled-components';
 import { graphql } from "gatsby";
 
+import AboutFinalText from '../components/about/final-text';
 import AboutImage from '../components/about/image';
 import AboutLogoText from '../components/about/logo-text';
 import AboutMission from '../components/about/mission';
@@ -35,6 +36,7 @@ export default class HomePage extends React.Component {
           <Separator />
           <AboutVision />
           <Separator />
+          <AboutFinalText />
         </Box>
       </Layout>
     )
