@@ -1,11 +1,11 @@
 import React from "react";
 
-import AboutCopy from '../copy';
+import CopyBox from '../copy-box';
 import Box from '../../box';
 import Container from '../../container';
 import Logo from '../../logo';
 
-export default () => (
+export default ({ html }) => (
   <Container>
     <Box
       display="flex"
@@ -14,9 +14,14 @@ export default () => (
       py={[6, 7]}
     >
       <Box flex={1}><Logo /></Box>
-      <Box flex={1} my={5} display="flex" alignItems="center" justifyContent="flex-end">
-        <AboutCopy pl={[0, 5]} textAlign={["left", "right"]}>Com uma equipa de profissionais com mais de 25 anos de experiência, a Praça Velha Sociedade Imobiliária S.A. e os seus associados contam com uma distinta reputação nas atividade dos setores da promoção e comercialização de bens imobiliários, tanto no panorama nacional como internacional.</AboutCopy>
-      </Box>
+      <CopyBox
+        flex={1}
+        my={5}
+        display="flex"
+        alignItems="center"
+        justifyContent="flex-end"
+        dangerouslySetInnerHTML={{ __html: html }}
+      />
     </Box>
   </Container>
 )

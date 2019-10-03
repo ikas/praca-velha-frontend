@@ -1,5 +1,4 @@
 import React from "react";
-import styled from 'styled-components';
 import { graphql } from "gatsby";
 
 import AboutFinalText from '../components/about/final-text';
@@ -13,30 +12,32 @@ import Heading from '../components/heading';
 import Layout from '../components/layout';
 import Separator from '../components/content-separator';
 
-const BlackBackground = styled(Box)`
-  background: ${props => props.theme.colors.primarySoftShade};
-`;
-
 export default class HomePage extends React.Component {
   render() {
-    const { data } = this.props
-    const siteTitle = data.site.siteMetadata.title
+    const {
+      title,
+      aboutMainText,
+      textInBlack,
+      missionText,
+      visionText,
+      finalText,
+    } = this.props.data.allContentfulAbout.edges[0].node
     return (
-      <Layout location={this.props.location} title={siteTitle} headerAlwaysVisible={true}>
+      <Layout location={this.props.location} title={title} headerAlwaysVisible={true}>
         <Box bg="#fff">
           <AboutImage>
-            <BlackBackground py={4} alignSelf="stretch" display="flex" justifyContent="center">
-              <Heading color="white">Sobre nós</Heading>
-            </BlackBackground>
+            <Box bg="primarySoftShade" py={4} alignSelf="stretch" display="flex" justifyContent="center">
+              <Heading color="white">{title}</Heading>
+            </Box>
           </AboutImage>
 
-          <AboutLogoText />
-          <AboutTextInBlack />
-          <AboutMission />
+          <AboutLogoText html={aboutMainText.childContentfulRichText.html} />
+          <AboutTextInBlack html={textInBlack.childContentfulRichText.html} />
+          <AboutMission html={missionText.childContentfulRichText.html} />
           <Separator />
-          <AboutVision />
+          <AboutVision html={visionText.childContentfulRichText.html} />
           <Separator />
-          <AboutFinalText />
+          <AboutFinalText html={finalText.childContentfulRichText.html} />
         </Box>
       </Layout>
     )
@@ -45,9 +46,36 @@ export default class HomePage extends React.Component {
 
 export const pageQuery = graphql`
   query {
-    site {
-      siteMetadata {
-        title
+    allContentfulAbout(filter: { node_locale: { eq: "pt" }}) {
+      edges {
+        node {
+          title
+          aboutMainText {
+            childContentfulRichText {
+              html
+            }
+          }
+          textInBlack {
+            childContentfulRichText {
+              html
+            }
+          }
+          missionText {
+            childContentfulRichText {
+              html
+            }
+          }
+          visionText {
+            childContentfulRichText {
+              html
+            }
+          }
+          finalText {
+            childContentfulRichText {
+              html
+            }
+          }
+        }
       }
     }
   }
