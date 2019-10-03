@@ -16,6 +16,8 @@ export default class HomePage extends React.Component {
   render() {
     const {
       title,
+      missionTitle,
+      visionTitle,
       aboutMainText,
       textInBlack,
       missionText,
@@ -33,9 +35,9 @@ export default class HomePage extends React.Component {
 
           <AboutLogoText html={aboutMainText.childContentfulRichText.html} />
           <AboutTextInBlack html={textInBlack.childContentfulRichText.html} />
-          <AboutMission html={missionText.childContentfulRichText.html} />
+          <AboutMission title={missionTitle} html={missionText.childContentfulRichText.html} />
           <Separator />
-          <AboutVision html={visionText.childContentfulRichText.html} />
+          <AboutVision title={visionTitle} html={visionText.childContentfulRichText.html} />
           <Separator />
           <AboutFinalText html={finalText.childContentfulRichText.html} />
         </Box>
@@ -50,6 +52,8 @@ export const pageQuery = graphql`
       edges {
         node {
           title
+          missionTitle
+          visionTitle
           aboutMainText {
             childContentfulRichText {
               html
