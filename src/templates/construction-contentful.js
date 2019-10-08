@@ -19,7 +19,7 @@ class ConstructionContentfulTemplate extends React.Component {
     const lat = location ? location.lat : 41.55032;
     const lon = location ? location.lon : -8.42005;
     return (
-      <Layout location={this.props.location} title={construction.name} headerAlwaysVisible={true}>
+      <Layout location={this.props.location} title={construction.name}>
         <ConstructionImage image={construction.mainImage.fluid}>
           <ConstructionLogoHighlight logo={construction.logoWhite.fixed} />
         </ConstructionImage>

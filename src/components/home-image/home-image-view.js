@@ -16,7 +16,7 @@ const Image = styled(BackgroundImage)`
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-top: 4rem;
+  padding-top: 5rem;
 `
 
 export default ({ children, ...props  }) => {

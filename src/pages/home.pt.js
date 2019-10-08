@@ -15,7 +15,7 @@ export default class HomePage extends React.Component {
     const available = constructions.filter(({node}) => node.status === 'Ready').slice(0, 3)
     const portfolio = constructions.filter(({node}) => node.status === 'Portfolio').slice(0, 3)
     return (
-      <Layout location={this.props.location} title={siteTitle}>
+      <Layout location={this.props.location} title={siteTitle} logoAlwaysVisible={false}>
         <HomeImage />
         <ConstructionsGrid title='Home Development Heading' constructions={development} />
         <ConstructionsGrid title='Home Available Heading' constructions={available}  />

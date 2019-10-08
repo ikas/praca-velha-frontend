@@ -51,7 +51,7 @@ export default class HeaderContainer extends React.Component {
       render={data => {
         return <HeaderView
           {...this.props}
-          isScrolling={this.state.scroll > this.state.top + 200}
+          isScrolling={this.state.scroll > this.state.top + 150}
           menuLinks={data.allContentfulPost.edges}
           menuOpen={this.state.open}
           toggleMenuOpen={() => this.setState({ open: !this.state.open })}

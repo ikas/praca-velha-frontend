@@ -15,14 +15,8 @@ const Background = styled(Box)`
   transition: all 0.3s ${props => props.theme.easingFunction};
   z-index: ${props => props.theme.zIndexes.header};
   overflow-y: hidden;
-
-  &.visible {
-    opacity: 1;
-  }
-
-  &.not-visible {
-    opacity: 0;
-  }
+  height: 64px;
+  background: ${props => props.theme.colors.primarySoftShade};
 `
 
 const Header = styled(Container)`
@@ -31,28 +25,24 @@ const Header = styled(Container)`
   align-items: center;
   justify-content: space-between;
   background: transparent;
+  height: 64px;
 `
 
-const getBgColor = isScrolling => !isScrolling ? theme.colors.primary : theme.colors.primarySoftShade
-const getTextColor = () => theme.colors.white
+const getIconColor = () => theme.colors.secondary
 
 export default ({
   isScrolling,
   menuLinks,
   menuOpen,
   toggleMenuOpen,
-  alwaysVisible = false,
+  logoAlwaysVisible = true,
 }) => {
   const { t, i18n } = useTranslation()
   const lang = i18n.language
   const links = menuLinks.filter(({ node }) => node.node_locale.startsWith(lang))
   return (
     <>
-      <Background
-        id="header-wrapper"
-        className={isScrolling || alwaysVisible ? 'visible' : 'not-visible'}
-        bg={getBgColor(isScrolling)}
-      >
+      <Background id="header-wrapper" className={isScrolling ? 'scrolling' : 'not-scrolling'}>
         <Header>
           <Box p={3} display="flex">
             <HamburgerSpin
@@ -60,13 +50,18 @@ export default ({
               toggleButton={toggleMenuOpen}
               buttonWidth={32}
               buttonStyle={{ outline: 'none', padding: 0, display: 'inline-flex' }}
-              barColor={getTextColor()}
+              barColor={getIconColor(isScrolling)}
             />
           </Box>
 
           <Box py={3} display="flex">
             <Link to={t('Home URL')}>
-              <img src="/logo_horizontal.svg" width="100" alt="Praça Velha logo" />
+              <img
+                src="/logo_horizontal.svg"
+                width="100"
+                alt="Praça Velha logo"
+                style={{ display: isScrolling || logoAlwaysVisible ? 'inherit' : 'none' }}
+              />
             </Link>
           </Box>
 

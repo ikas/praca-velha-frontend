@@ -25,7 +25,7 @@ export default class HomePage extends React.Component {
       finalText,
     } = this.props.data.allContentfulAbout.edges[0].node
     return (
-      <Layout location={this.props.location} title={title} headerAlwaysVisible={true}>
+      <Layout location={this.props.location} title={title}>
         <Box bg="#fff">
           <AboutImage>
             <Box bg="primarySoftShade" py={4} alignSelf="stretch" display="flex" justifyContent="center">

@@ -20,7 +20,7 @@ export default class PostContentfulTemplate extends React.Component {
   render() {
     const post = this.props.data.contentfulPost
     return (
-      <Layout location={this.props.location} title={post.title} headerAlwaysVisible={true}>
+      <Layout location={this.props.location} title={post.title}>
         <Container>
           <PostWrapper px={3}>
             <Heading>{post.title}</Heading>

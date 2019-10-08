@@ -40,7 +40,7 @@ const Svg = styled.svg`
 `
 
 export default ({ visible }) => (
-  <Svg id="Camada_1" data-name="Camada 1" xmlns="http://www.w3.org/2000/svg" width="200" viewBox="0 0 3544.04 3473.85">
+  <Svg id="Camada_1" data-name="Camada 1" xmlns="http://www.w3.org/2000/svg" width="180" viewBox="0 0 3544.04 3473.85">
     <text className={`cls-1 ${visible ? 'visible' : 'hidden'}`} transform="translate(32.5 3354.71)">PRAÇA VELHA</text>
     <polyline className="cls-5 pen-drawable" points="32.52 2767.61 833.17 2767.61 833.17 1995.88 1123.94 1780.26 1321.17 1780.26 1321.17 2767.61 1123.94 2767.61 1123.94 838.3 1718.39 838.3 1718.39 1564.63 1536.8 1564.63 1536.8 32.52 2319.88 32.52 2319.88 1825.65 2572.18 1825.65 2572.18 2767.61 2387.97 2767.61 2387.97 2109.37 2572.18 2109.37 2809.19 2346.39 2809.19 2767.61 3511.51 2767.61"/>
   </Svg>
