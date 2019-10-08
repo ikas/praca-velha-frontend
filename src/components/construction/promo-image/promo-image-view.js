@@ -20,7 +20,7 @@ const Image = styled(BackgroundImage)`
 export default ({ ...props  }) => {
   const data = useStaticQuery(graphql`
     query {
-      file(relativePath: { eq: "about-bg.jpg" }) {
+      file(relativePath: { eq: "buildings-bg.jpg" }) {
         childImageSharp {
           fluid {
             ...GatsbyImageSharpFluid
