@@ -8,6 +8,8 @@ const resources = {
     translation: {
       "About": "About us",
       "About URL": "/en/about",
+      "Buildings": "Buildings",
+      "Buildings URL": "/en/buildings",
       "Contacts": "Contacts",
       "Contacts URL": "/en/contacts",
       "Contacts Heading": "Contacts",
@@ -26,6 +28,8 @@ const resources = {
     translation: {
       "About": "Sobre nós",
       "About URL": "/pt/sobre-nos",
+      "Buildings": "Empreendimentos",
+      "Buildings URL": "/pt/empreendimentos",
       "Contacts": "Contactos",
       "Contacts URL": "/pt/contactos",
       "Contacts Heading": "Contactos",

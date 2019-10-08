@@ -20,10 +20,10 @@ const Constructions = styled(Box)`
 
 const GridItem = styled(Box)`
   width: 33%;
+  margin-bottom: ${props => props.theme.space[4]}px;
 
   @media(max-width: ${props => props.theme.breakpoints.md}) {
     width: 100%;
-    margin-bottom: ${props => props.theme.space[4]}px;
   }
 `
 

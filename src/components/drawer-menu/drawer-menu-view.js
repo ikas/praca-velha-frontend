@@ -50,6 +50,7 @@ export default ({ menuLinks, menuOpen, toggleMenuOpen }) => {
           label={node.title} />
         )}
 
+        <MenuItem to={t('Buildings URL')} label={t('Buildings')} />
         <MenuItem to={t('About URL')} label={t('About')} />
         <MenuItem to={t('Contacts URL')} label={t('Contacts')} />
       </MenuWrapper>
