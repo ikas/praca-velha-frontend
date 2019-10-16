@@ -24,7 +24,6 @@ const Heading2 = styled.h2`
   font-family: 'Roboto', sans-serif;
   line-height: 3.052rem;
   font-weight: bold;
-  text-transform: uppercase;
   ${space}
   ${layout}
   ${color}

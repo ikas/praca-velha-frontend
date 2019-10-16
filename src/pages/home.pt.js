@@ -2,7 +2,7 @@ import React from "react"
 import { graphql } from "gatsby"
 
 import ConstructionsGrid from '../components/construction/grid'
-import HomeImage from '../components/home-image'
+import HomeImage from '../components/home/image'
 import Layout from '../components/layout'
 
 export default class HomePage extends React.Component {

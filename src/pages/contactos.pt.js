@@ -5,7 +5,7 @@ import ButtonPrimary from '../components/button-primary'
 import Container from '../components/container'
 import Copy from '../components/copy-text'
 import Heading from '../components/heading'
-import HomeImage from '../components/home-image'
+import HomeImage from '../components/home/image'
 import Separator from '../components/content-separator'
 import Layout from '../components/layout'
 
