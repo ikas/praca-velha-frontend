@@ -8,16 +8,6 @@ import ConstructionCard from '../card'
 import Heading from '../../heading'
 import ContentSeparator from '../../content-separator'
 
-const StyledHeading = styled(Heading)`
-  text-align: center;
-`
-
-const Constructions = styled(Box)`
-  display: flex;
-  justify-content: flex-start;
-  flex-wrap: wrap;
-`
-
 const GridItem = styled(Box)`
   width: 33%;
   margin-bottom: ${props => props.theme.space[4]}px;
@@ -27,19 +17,19 @@ const GridItem = styled(Box)`
   }
 `
 
-export default ({ title, constructions }) => {
+export default ({ title, constructions, ...props }) => {
   const { t } = useTranslation()
   return constructions.length > 0 && (
-    <Box bg="#eee">
-      <ContentSeparator />
+    <Box {...props}>
       <Container>
-        <StyledHeading my={6} level={4}>{t(title)}</StyledHeading>
-        <Constructions mb={7}>
+        <Heading my={6} level={2} textAlign="center">{t(title)}</Heading>
+        <Box display="flex" justifyContent="center" flexWrap="wrap" mb={7}>
           {constructions.map(({ node }) => (
             <GridItem key={node.id}><ConstructionCard {...node} /></GridItem>
           ))}
-        </Constructions>
+        </Box>
       </Container>
+      <ContentSeparator />
     </Box>
   )
 }

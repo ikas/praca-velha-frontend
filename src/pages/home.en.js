@@ -1,7 +1,8 @@
 import React from "react"
 import { graphql } from "gatsby"
 
-import ConstructionsGrid from '../components/construction/grid'
+import HomeBuildingsBanner from '../components/home/buildings-banner'
+import HomeConstructionGrids from '../components/home/construction-grids'
 import HomeImage from '../components/home/image'
 import Layout from '../components/layout'
 
@@ -17,9 +18,8 @@ export default class HomePage extends React.Component {
     return (
       <Layout location={this.props.location} title={siteTitle} logoAlwaysVisible={false}>
         <HomeImage />
-        <ConstructionsGrid title='Home Development Heading' constructions={development} />
-        <ConstructionsGrid title='Home Available Heading' constructions={available}  />
-        <ConstructionsGrid title='Home Portfolio Heading' constructions={portfolio} />
+        <HomeBuildingsBanner />
+        <HomeConstructionGrids available={available} development={development} portfolio={portfolio} />
       </Layout>
     )
   }
