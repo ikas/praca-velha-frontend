@@ -23,6 +23,7 @@ const resources = {
       "Home Main Header": "Real estate company",
       "Home Secondary Header": "Braga",
       "Home Know Our Buildings": "Get familiar with our constructions",
+      "Home See All Buildings": "See all constructions",
       "Construction Location Heading": "Location",
       "Construction Gallery Heading": "The construction",
     }
@@ -46,6 +47,7 @@ const resources = {
       "Home Main Header": "Sociedade Imobiliária",
       "Home Secondary Header": "Braga",
       "Home Know Our Buildings": "Conheça os nossos imóveis",
+      "Home See All Buildings": "Veja todos os empreendimentos",
       "Construction Location Heading": "Localização",
       "Construction Gallery Heading": "O empreendimento",
     }
