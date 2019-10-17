@@ -27,6 +27,7 @@ const resources = {
       "Home Know More": "Know More",
       "Construction Location Heading": "Location",
       "Construction Gallery Heading": "The construction",
+      "Construction Price Tag": "From {{price}}€",
     }
   },
   pt: {
@@ -52,6 +53,7 @@ const resources = {
       "Home Know More": "Saiba mais",
       "Construction Location Heading": "Localização",
       "Construction Gallery Heading": "O empreendimento",
+      "Construction Price Tag": "A partir de {{price}}€",
     }
   }
 }

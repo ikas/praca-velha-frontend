@@ -27,8 +27,8 @@ class ConstructionContentfulTemplate extends React.Component {
         <ConstructionInfo {...construction} />
         <ConstructionGallery {...construction} />
 
-        <Box px={3}>
-          <Heading level={4} textAlign="center" mt={6} mb={4}>{t('Construction Location Heading')}</Heading>
+        <Box py={6} px={3} bg="primary">
+          <Heading textAlign="center" color="secondary" my={6}>{t('Construction Location Heading')}</Heading>
           <ConstructionMap lat={lat} lng={lon} />
         </Box>
       </Layout>
@@ -53,6 +53,7 @@ export const pageQuery = graphql`
       city
       country
       typologies
+      price
       location {
         lat
         lon

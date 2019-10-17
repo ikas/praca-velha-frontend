@@ -1,4 +1,5 @@
 import React from 'react'
+import { useTranslation } from 'react-i18next'
 import styled from 'styled-components'
 import Image from 'gatsby-image'
 
@@ -13,31 +14,42 @@ const StyledImage = styled(Image)`
   max-height: 400px;
 `
 
-const StyledContainer = styled(Container)`
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-between;
-`
+export default ({
+  address,
+  city,
+  firstDescription,
+  price,
+  secondaryImage,
+  secondDescription,
+  typologies,
+}) => {
+  const { t } = useTranslation()
+  const formattedPrice = parseFloat(Math.round(price * 100) / 100)
+    .toFixed(2)
+    .replace('.', ',')
+    .replace(/^\d\d\d/g, x => x + ' ')
 
-export default ({ name, address, city, typologies, secondaryImage, firstDescription, secondDescription }) => (
-  <Box bg="primary">
-    <StyledContainer py={7}>
-      <Box mx={4} my={4} width="45%">
-        { secondaryImage && <StyledImage fixed={secondaryImage.fixed} /> }
-      </Box>
-      <Box mx={4} my={4} width="45%" display="flex" alignItems="center" justifyContent="center">
-        <RichText textAlign="right" richText={firstDescription} />
-      </Box>
-      <Box mx={4} my={4} width="45%" display="flex" alignItems="center" justifyContent="center">
-        <RichText richText={secondDescription} />
-      </Box>
-      <Box mx={4} my={4} width="45%" display="flex" flexDirection="column" justifyContent="space-around">
-        <Box>
-          <Heading color="white" fontWeight="bold" textAlign="center" level={3} my={4}>{address}</Heading>
-          <Heading color="white" fontWeight="bold" textAlign="center" level={3} my={4}>{city}</Heading>
+  return (
+    <Box bg="primary">
+      <Container py={7}>
+        <Box display="grid" gridTemplateColumns="50% 50%" gridColumnGap={4} gridRowGap={6}>
+          { secondaryImage && <StyledImage fixed={secondaryImage.fixed} /> }
+          <Box display="flex" alignItems="center" justifyContent="center">
+            <RichText textAlign="right" richText={firstDescription} />
+          </Box>
+          <Box display="flex" alignItems="center" justifyContent="center">
+            <RichText richText={secondDescription} />
+          </Box>
+          <Box display="flex" flexDirection="column" justifyContent="space-around">
+            <Box>
+              <Heading color="white" fontWeight="bold" textAlign="center" level={3} my={4}>{address}</Heading>
+              <Heading color="white" fontWeight="bold" textAlign="center" level={3} mt={4} mb={2}>{city}</Heading>
+            </Box>
+            <Heading color="white" fontWeight="bold" textAlign="center" level={2} my={4}>{typologies.join(' | ')}</Heading>
+          </Box>
         </Box>
-        <Heading color="white" fontWeight="bold" textAlign="center" level={2} my={4}>{typologies.join(' | ')}</Heading>
-      </Box>
-    </StyledContainer>
-  </Box>
-)
+        <Heading level={2} color="secondary" mb={0} mt={6} textAlign="center">{t('Construction Price Tag', { price: formattedPrice })}</Heading>
+      </Container>
+    </Box>
+  )
+}

@@ -38,9 +38,9 @@ export default ({ mainImage, secondaryImage, images }) => {
   }
 
   return (
-    <Box mt={7} pb={4} px={3}>
+    <Box py={6} px={3}>
       <Container>
-        <Heading level={4} textAlign="center">{t('Construction Gallery Heading')}</Heading>
+        <Heading textAlign="center" my={6}>{t('Construction Gallery Heading')}</Heading>
         <ImageGallery images={galleryItems} />
       </Container>
     </Box>
