@@ -21,7 +21,7 @@ const BorderedBox = styled(Box)`
 `
 
 const Anchor = styled.a`
-  color: ${props => props.theme.colors.white};
+  color: ${props => props.theme.colors.secondary};
 `
 
 export default () => {
@@ -29,38 +29,38 @@ export default () => {
   return (
     <FooterWrapper>
       <Container>
-        <BorderedBox display="flex" mx={3} py={3} justifyContent="space-between">
-          <Box display="flex" alignItems="center" flex={1}>
+        <BorderedBox display="flex" mx={3} py={4} justifyContent="space-between">
+          <Box display="flex" alignItems="center" justifyContent="flex-start" flex={2}>
             <LogoSmall />
-            <Box ml={3}>
-              <Heading color="white" fontWeight="bold" level={5} mb={1}>
-                Praça Velha - Sociedade<br />Imobiliária S.A
+            <Box ml={3} flex={1}>
+              <Heading color="secondary" fontWeight="bold" level={5} my={1}>
+                Praça Velha - Sociedade Imobiliária S.A
               </Heading>
-              <Copy color="white">Rua Justino da Cruz, Nº 154</Copy>
-              <Copy color="white">4700-314, Braga</Copy>
+              <Copy color="secondary">Rua Justino da Cruz, Nº 154</Copy>
+              <Copy color="secondary">4700-314, Braga</Copy>
             </Box>
           </Box>
 
           <Box flex={1} display="flex" alignItems="center" justifyContent="center">
             <Box>
-              <Copy color="white" m={3} textAlign="center">
+              <Copy color="secondary" m={3} textAlign="center">
                 <FontAwesomeIcon icon={faMobile} size="lg" color={theme.colors.secondary} style={{ marginRight: '8px' }} />
                 +351 925 748 930
               </Copy>
-              <Copy color="white" m={3} textAlign="center">
+              <Copy color="secondary" m={3} textAlign="center">
                 <FontAwesomeIcon icon={faPhone} size="lg" color={theme.colors.secondary} style={{ marginRight: '8px' }} />
                 +351 253 123 456
               </Copy>
             </Box>
 
             <Box>
-              <Copy color="white" m={3} textAlign="center">
+              <Copy color="secondary" m={3} textAlign="center">
                 <FontAwesomeIcon icon={faAt} size="lg" color={theme.colors.secondary} style={{ marginRight: '8px' }} />
                 <Anchor href="mailto:info@pracavelha.pt">info@pracavelha.pt</Anchor>
               </Copy>
 
               <Box m={3}>
-                <a href="https://www.instagram.com/praca.velha">
+                <a href="https://www.facebook.com/pracavelhasociedadeimobiliaria/">
                   <FontAwesomeIcon icon={faFacebook} size="lg" color={theme.colors.secondary} style={{ marginRight: '8px' }} />
                 </a>
                 <a href="https://www.instagram.com/praca.velha">
@@ -70,7 +70,7 @@ export default () => {
             </Box>
           </Box>
         </BorderedBox>
-        <Copy color="white" py={3} textAlign="center">© Praça Velha, {year}</Copy>
+        <Copy color="secondary" py={3} textAlign="center">© Praça Velha, {year}</Copy>
       </Container>
     </FooterWrapper>
   )
