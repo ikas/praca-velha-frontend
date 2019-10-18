@@ -24,7 +24,17 @@ const Anchor = styled.a`
   color: ${props => props.theme.colors.secondary};
 `
 
-export default () => {
+export default ({
+  companyName,
+  companyAddress,
+  companyPostalCode,
+  companyCity,
+  companyPhone,
+  companyPhone2,
+  companyEmail,
+  companyFacebookURL,
+  companyInstagramURL,
+}) => {
   const year = (new Date()).getFullYear()
   return (
     <FooterWrapper>
@@ -33,11 +43,9 @@ export default () => {
           <Box display="flex" alignItems="center" justifyContent="flex-start" flex={2}>
             <LogoSmall />
             <Box ml={3} flex={1}>
-              <Heading color="secondary" fontWeight="bold" level={5} my={1}>
-                Praça Velha - Sociedade Imobiliária S.A
-              </Heading>
-              <Copy color="secondary">Rua Justino da Cruz, Nº 154</Copy>
-              <Copy color="secondary">4700-314, Braga</Copy>
+              <Heading color="secondary" fontWeight="bold" level={5} my={1}>{companyName}</Heading>
+              <Copy color="secondary">{companyAddress}</Copy>
+              <Copy color="secondary">{companyPostalCode}, {companyCity}</Copy>
             </Box>
           </Box>
 
@@ -45,32 +53,32 @@ export default () => {
             <Box>
               <Copy color="secondary" m={3} textAlign="center">
                 <FontAwesomeIcon icon={faMobile} size="lg" color={theme.colors.secondary} style={{ marginRight: '8px' }} />
-                +351 925 748 930
+                {companyPhone}
               </Copy>
               <Copy color="secondary" m={3} textAlign="center">
                 <FontAwesomeIcon icon={faPhone} size="lg" color={theme.colors.secondary} style={{ marginRight: '8px' }} />
-                +351 253 123 456
+                {companyPhone2}
               </Copy>
             </Box>
 
             <Box>
               <Copy color="secondary" m={3} textAlign="center">
                 <FontAwesomeIcon icon={faAt} size="lg" color={theme.colors.secondary} style={{ marginRight: '8px' }} />
-                <Anchor href="mailto:info@pracavelha.pt">info@pracavelha.pt</Anchor>
+                <Anchor href={companyEmail}>{companyEmail}</Anchor>
               </Copy>
 
               <Box m={3}>
-                <a href="https://www.facebook.com/pracavelhasociedadeimobiliaria/">
+                <a href={companyFacebookURL}>
                   <FontAwesomeIcon icon={faFacebook} size="lg" color={theme.colors.secondary} style={{ marginRight: '8px' }} />
                 </a>
-                <a href="https://www.instagram.com/praca.velha">
+                <a href={companyInstagramURL}>
                   <FontAwesomeIcon icon={faInstagram} size="lg" color={theme.colors.secondary} style={{ marginRight: '8px' }} />
                 </a>
               </Box>
             </Box>
           </Box>
         </BorderedBox>
-        <Copy color="secondary" py={3} textAlign="center">© Praça Velha, {year}</Copy>
+        <Copy color="secondary" py={3} textAlign="center">© {companyName}, {year}</Copy>
       </Container>
     </FooterWrapper>
   )

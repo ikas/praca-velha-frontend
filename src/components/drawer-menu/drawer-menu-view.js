@@ -37,19 +37,12 @@ const MenuItem = ({ label, to, ...props }) => (
   </MenuLink>
 )
 
-export default ({ menuLinks, menuOpen, toggleMenuOpen }) => {
+export default ({ menuOpen, toggleMenuOpen }) => {
   const { t } = useTranslation()
   return (
     <Drawer open={menuOpen} onClose={() => toggleMenuOpen()}>
       <MenuWrapper role="presentation" onClick={() => toggleMenuOpen()} onKeyDown={() => toggleMenuOpen()}>
         <MenuItem to={t('Home URL')} label={t('Home')} />
-
-        { menuLinks.map(({ node }) => <MenuItem
-          key={node.id}
-          to={`/${node.slug}`}
-          label={node.title} />
-        )}
-
         <MenuItem to={t('Buildings URL')} label={t('Buildings')} />
         <MenuItem to={t('About URL')} label={t('About')} />
         <MenuItem to={t('Contacts URL')} label={t('Contacts')} />

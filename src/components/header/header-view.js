@@ -32,14 +32,11 @@ const getIconColor = () => theme.colors.secondary
 
 export default ({
   isScrolling,
-  menuLinks,
   menuOpen,
   toggleMenuOpen,
   logoAlwaysVisible = true,
 }) => {
-  const { t, i18n } = useTranslation()
-  const lang = i18n.language
-  const links = menuLinks.filter(({ node }) => node.node_locale.startsWith(lang))
+  const { t } = useTranslation()
   return (
     <>
       <Background id="header-wrapper" className={isScrolling ? 'scrolling' : 'not-scrolling'}>
@@ -69,7 +66,7 @@ export default ({
         </Header>
       </Background>
 
-      <DrawerMenu menuLinks={links} menuOpen={menuOpen} toggleMenuOpen={toggleMenuOpen} />
+      <DrawerMenu menuOpen={menuOpen} toggleMenuOpen={toggleMenuOpen} />
     </>
   )
 }
