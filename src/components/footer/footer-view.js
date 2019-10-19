@@ -1,8 +1,11 @@
 import React from 'react'
 import styled from 'styled-components'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faMobile, faPhone, faAt } from '@fortawesome/free-solid-svg-icons'
-import { faFacebook, faInstagram } from '@fortawesome/free-brands-svg-icons'
+
+import FbIcon from '../icons/fb-icon'
+import InstagramIcon from '../icons/instagram-icon'
+import MobileIcon from '../icons/mobile-icon'
+import PhoneIcon from '../icons/phone-icon'
+import EmailIcon from '../icons/email-icon'
 
 import Box from '../box'
 import Copy from '../copy-text'
@@ -52,27 +55,27 @@ export default ({
           <Box flex={1} display="flex" alignItems="center" justifyContent="center">
             <Box>
               <Copy color="secondary" m={3} textAlign="center">
-                <FontAwesomeIcon icon={faMobile} size="lg" color={theme.colors.secondary} style={{ marginRight: '8px' }} />
+                <MobileIcon size="lg" color={theme.colors.secondary} style={{ marginRight: '8px' }} />
                 {companyPhone}
               </Copy>
               <Copy color="secondary" m={3} textAlign="center">
-                <FontAwesomeIcon icon={faPhone} size="lg" color={theme.colors.secondary} style={{ marginRight: '8px' }} />
+                <PhoneIcon size="lg" color={theme.colors.secondary} style={{ marginRight: '8px' }} />
                 {companyPhone2}
               </Copy>
             </Box>
 
             <Box>
               <Copy color="secondary" m={3} textAlign="center">
-                <FontAwesomeIcon icon={faAt} size="lg" color={theme.colors.secondary} style={{ marginRight: '8px' }} />
+                <EmailIcon size="lg" color={theme.colors.secondary} style={{ marginRight: '8px' }} />
                 <Anchor href={companyEmail}>{companyEmail}</Anchor>
               </Copy>
 
               <Box m={3}>
                 <a href={companyFacebookURL}>
-                  <FontAwesomeIcon icon={faFacebook} size="lg" color={theme.colors.secondary} style={{ marginRight: '8px' }} />
+                  <FbIcon size="lg" color={theme.colors.secondary} style={{ marginRight: '8px' }} />
                 </a>
                 <a href={companyInstagramURL}>
-                  <FontAwesomeIcon icon={faInstagram} size="lg" color={theme.colors.secondary} style={{ marginRight: '8px' }} />
+                  <InstagramIcon size="lg" color={theme.colors.secondary} style={{ marginRight: '8px' }} />
                 </a>
               </Box>
             </Box>
