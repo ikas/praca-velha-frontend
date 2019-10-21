@@ -23,6 +23,11 @@ export default ({
   companyAddress,
   companyPostalCode,
   companyCity,
+  companyPhone,
+  companyPhone2,
+  companyEmail,
+  companyFacebookUrl,
+  companyInstagramUrl,
 }) => {
   const { t } = useTranslation()
   return (
@@ -34,7 +39,7 @@ export default ({
       </ContactsImage>
 
       <Box bg="primary">
-        <Container alignItems="center" pb={6}>
+        <Container alignItems="center">
           <Heading level={3} mt={7} mb={2} color="secondary" fontWeight="bold">{companyName}</Heading>
           <Copy color="secondary" my={1}>{companyAddress}</Copy>
           <Copy color="secondary" my={1}>{`${companyPostalCode}, ${companyCity}`}</Copy>
@@ -45,14 +50,33 @@ export default ({
             gridTemplateColumns="50% 50%"
             justifyItems="center"
             alignItems="center"
+            my={7}
           >
             <LogoMedium />
-            <Box>
-              <FbIcon size="lg" color={theme.colors.secondary} style={{ marginRight: '8px' }} />
-              <InstagramIcon size="lg" color={theme.colors.secondary} style={{ marginRight: '8px' }} />
-              <EmailIcon size="lg" color={theme.colors.secondary} style={{ marginRight: '8px' }} />
-              <PhoneIcon size="lg" color={theme.colors.secondary} style={{ marginRight: '8px' }} />
-              <MobileIcon size="lg" color={theme.colors.secondary} style={{ marginRight: '8px' }} />
+            <Box display="flex" flexDirection="column">
+              <Box display="flex" alignItems="center" justifyContent="center" my={3}>
+                <MobileIcon size="2x" color={theme.colors.secondary} style={{ marginRight: '16px' }} />
+                <Copy color="secondary" fontWeight="bold">{companyPhone}</Copy>
+              </Box>
+
+              <Box display="flex" alignItems="center" justifyContent="center" my={3}>
+                <PhoneIcon size="2x" color={theme.colors.secondary} style={{ marginRight: '16px' }} />
+                <Copy color="secondary" fontWeight="bold">{companyPhone2}</Copy>
+              </Box>
+
+              <Box display="flex" alignItems="center" justifyContent="center" my={3}>
+                <EmailIcon size="2x" color={theme.colors.secondary} style={{ marginRight: '16px' }} />
+                <Copy color="secondary" fontWeight="bold">{companyEmail}</Copy>
+              </Box>
+
+              <Box display="flex" alignItems="center" justifyContent="center" my={5}>
+                <a href={companyFacebookUrl}>
+                  <FbIcon size="2x" color={theme.colors.secondary} style={{ margin: '0 16px' }} />
+                </a>
+                <a href={companyInstagramUrl}>
+                  <InstagramIcon size="2x" color={theme.colors.secondary} style={{ margin: '0 16px' }} />
+                </a>
+              </Box>
             </Box>
           </Box>
         </Container>

@@ -35,8 +35,8 @@ export default ({
   companyPhone,
   companyPhone2,
   companyEmail,
-  companyFacebookURL,
-  companyInstagramURL,
+  companyFacebookUrl,
+  companyInstagramUrl,
 }) => {
   const year = (new Date()).getFullYear()
   return (
@@ -71,11 +71,11 @@ export default ({
               </Copy>
 
               <Box m={3}>
-                <a href={companyFacebookURL}>
-                  <FbIcon size="lg" color={theme.colors.secondary} style={{ marginRight: '8px' }} />
+                <a href={companyFacebookUrl}>
+                  <FbIcon size="lg" color={theme.colors.secondary} style={{ marginRight: '16px' }} />
                 </a>
-                <a href={companyInstagramURL}>
-                  <InstagramIcon size="lg" color={theme.colors.secondary} style={{ marginRight: '8px' }} />
+                <a href={companyInstagramUrl}>
+                  <InstagramIcon size="lg" color={theme.colors.secondary} />
                 </a>
               </Box>
             </Box>
