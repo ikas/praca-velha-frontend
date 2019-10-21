@@ -17,6 +17,8 @@ import EmailIcon from '../../icons/email-icon'
 import PhoneIcon from '../../icons/phone-icon'
 import MobileIcon from '../../icons/mobile-icon'
 
+import Form from '../form'
+
 export default ({
   location,
   companyName,
@@ -81,6 +83,8 @@ export default ({
           </Box>
         </Container>
       </Box>
+
+      <Form />
     </Layout>
   )
 }
