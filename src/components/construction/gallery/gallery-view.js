@@ -15,16 +15,16 @@ export default ({ mainImage, secondaryImage, images }) => {
     galleryItems.push({
       src: mainImage.fluid.src,
       thumbnail: mainImage.fluid.src,
-      thumbnailWidth: 320,
-      thumbnailHeight: 174,
+      thumbnailWidth: 280,
+      thumbnailHeight: 200,
     })
   }
   if (secondaryImage) {
     galleryItems.push({
       src: secondaryImage.fixed.src,
       thumbnail: secondaryImage.fixed.src,
-      thumbnailWidth: 320,
-      thumbnailHeight: 174,
+      thumbnailWidth: 280,
+      thumbnailHeight: 200,
     })
   }
 
@@ -32,8 +32,8 @@ export default ({ mainImage, secondaryImage, images }) => {
     images.forEach(img => galleryItems.push({
       src: img.fluid.src,
       thumbnail: img.fluid.src,
-      thumbnailWidth: 320,
-      thumbnailHeight: 174,
+      thumbnailWidth: 280,
+      thumbnailHeight: 200,
     }))
   }
 
