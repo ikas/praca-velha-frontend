@@ -2,7 +2,7 @@ import React from 'react'
 import Img from "gatsby-image"
 import { useStaticQuery, graphql } from 'gatsby'
 
-export default () => {
+export default props => {
   const data = useStaticQuery(graphql`
     query {
       file(relativePath: { eq: "logo_vertical.png" }) {
@@ -15,5 +15,5 @@ export default () => {
     }
   `)
 
-  return <Img fluid={data.file.childImageSharp.fluid} alt="Praça Velha logo" />
+  return <Img fluid={data.file.childImageSharp.fluid} alt="Praça Velha logo" {...props} />
 }

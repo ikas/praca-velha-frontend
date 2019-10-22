@@ -1,1 +1,3 @@
-export { default } from './mission-image-view'
+import React from 'react'
+
+export default () => <img src="/mission.svg" width="50%" alt="Mission illustration" />

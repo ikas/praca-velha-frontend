@@ -13,7 +13,7 @@ export default ({ html }) => (
       px={3}
       py={[6, 7]}
     >
-      <Box flex={1}><Logo /></Box>
+      <Box flex={1}><Logo width="75%" /></Box>
       <CopyBox
         flex={1}
         my={5}

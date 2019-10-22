@@ -11,7 +11,9 @@ export default ({ title, html }) => (
   <Container pb={6}>
     <Heading textAlign="center" mx={3} mt={[6, 7]}>{title}</Heading>
     <Box display="flex" flexDirection={['column', 'row']} px={3}>
-      <Box flex={1}><VisionImage /></Box>
+      <Box flex={1} display="flex" alignItems="center" justifyContent="center">
+        <VisionImage />
+      </Box>
       <CopyBox
         flex={1}
         display="flex"
