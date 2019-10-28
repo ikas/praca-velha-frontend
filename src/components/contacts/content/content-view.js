@@ -9,6 +9,8 @@ import Layout from '../../layout'
 
 import Form from '../form'
 
+import ContactInfoSVG from '../../../../static/assets/contact-info.svg'
+
 export default ({ location }) => {
   const { t } = useTranslation()
   return (
@@ -19,9 +21,9 @@ export default ({ location }) => {
         </Box>
       </ContactsImage>
 
-      <Box bg="primary">
+      <Box bg="primary" px={3}>
         <Container alignItems="center" py={7}>
-          <img src="/contact-info.svg" width="75%" alt="Contact information" />
+          <ContactInfoSVG />
         </Container>
       </Box>
 

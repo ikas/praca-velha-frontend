@@ -80,5 +80,13 @@ module.exports = {
       }
     },
     `gatsby-plugin-styled-components`,
+    {
+      resolve: 'gatsby-plugin-react-svg',
+      options: {
+        rule: {
+          include: /assets/
+        }
+      }
+    }
   ],
 }
