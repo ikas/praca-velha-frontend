@@ -20,6 +20,10 @@ const Image = styled(BackgroundImage)`
   justify-content: space-between;
   padding-top: 5rem;
   padding-bottom: 10rem;
+
+  @media(max-width: 768px) {
+    padding-top: 4rem;
+  }
 `
 
 export default props => {
@@ -37,7 +41,7 @@ export default props => {
 
   return (
     <Image fluid={data.file.childImageSharp.fluid} {...props}>
-      <Box width={300} height={200} pt={3}>
+      <Box width={[250, 400, 500]} height={[150, 250, 300]} pt={[0, 3]}>
         <HomeInfoSVG width="100%" height="100%" />
       </Box>
     </Image>
