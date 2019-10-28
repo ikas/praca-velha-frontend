@@ -81,7 +81,7 @@ export default ({
             </Box>
           </Box>
         </BorderedBox>
-        <Copy color="secondary" py={3} textAlign="center">© {companyName}, {year}</Copy>
+        <Copy color="secondary" py={3} px={3} textAlign="center">© {companyName}, {year}</Copy>
       </Container>
     </FooterWrapper>
   )
