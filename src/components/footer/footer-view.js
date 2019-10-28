@@ -42,7 +42,7 @@ export default ({
   return (
     <FooterWrapper>
       <Container>
-        <BorderedBox display="flex" mx={3} py={4} justifyContent="space-between">
+        <BorderedBox display="flex" flexDirection={["column", "column", "column", "row"]} mx={3} py={4} justifyContent="space-between">
           <Box display="flex" alignItems="center" justifyContent="flex-start" flex={2}>
             <LogoSmall />
             <Box ml={3} flex={1}>

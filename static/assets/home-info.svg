@@ -1,0 +1,27 @@
+<svg id="Camada_1" data-name="Camada 1"
+  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 218.8 253.24">
+  <defs>
+    <style>
+      .cls-1{fill:none;stroke:#cca434;stroke-linecap:round;stroke-linejoin:round;stroke-width:4px;}.cls-2{font-size:50px;fill:#cca434;font-family:BemboStd, Bembo Std;}.cls-3{letter-spacing:-0.17em;}.cls-4{letter-spacing:-0.13em;}.cls-5{font-size:18px;}.cls-6{letter-spacing:0.05em;}
+      .pen-drawable {
+        stroke-dasharray: 900;
+        stroke-dashoffset: 900;
+        animation: dash 2s ease-in-out forwards;
+        animation-delay: 0.5s;
+      }
+
+      @keyframes dash {
+        to {
+          stroke-dashoffset: 0;
+        }
+      }
+    </style>
+  </defs>
+  <polyline class="cls-1 pen-drawable" points="2.43 170.19 51.67 170.19 51.67 122.73 69.55 109.47 81.67 109.47 81.67 170.19 69.55 170.19 69.55 51.55 106.1 51.55 106.1 96.21 94.93 96.21 94.93 2 143.09 2 143.09 112.26 158.6 112.26 158.6 170.19 147.28 170.19 147.28 129.71 158.6 129.71 173.18 144.28 173.18 170.19 216.36 170.19"/>
+  <text class="cls-2" transform="translate(0 211.05)">
+    <tspan x="-8" y="10">Praça Velha</tspan>
+    <tspan class="cls-5">
+      <tspan x="2.49" y="38">Sociedade Imobiliária | Braga</tspan>
+    </tspan>
+  </text>
+</svg>

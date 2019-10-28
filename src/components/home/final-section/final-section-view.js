@@ -23,11 +23,11 @@ const Button = styled(Anchor)`
 export default () => {
   const { t } = useTranslation()
   return (
-    <Box bg="primary" px={3} pb={7}>
+    <Box bg="primary" px={3} pb={[4, 5, 6, 7]}>
       <Container>
-        <Heading level={2} textAlign="center" color="secondary" py={7} my={0}>{t('Home Know More')}</Heading>
-        <Box display="flex">
-          <Box flex={1} display="flex" justifyContent="center"><LogoMedium /></Box>
+        <Heading level={2} textAlign="center" color="secondary" py={[4, 5, 6, 7]} my={0}>{t('Home Know More')}</Heading>
+        <Box display="flex" flexDirection={['column', 'column', 'column', 'row']}>
+          <Box flex={1} display="flex" justifyContent="center" mb={[3, 3, 3, 0]}><LogoMedium /></Box>
           <Box flex={1} flexDirection="column" display="flex" justifyContent="center">
             <Button to={t('About URL')}>{t('About')}</Button>
             <Button to={t('Contacts URL')}>{t('Contacts')}</Button>
