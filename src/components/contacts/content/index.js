@@ -1,1 +1,1 @@
-export { default } from './content-container'
+export { default } from './content-view'
