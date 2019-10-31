@@ -11,7 +11,6 @@ import Box from '../box'
 import Copy from '../copy-text'
 import Container from '../container'
 import Heading from '../heading'
-import LogoSmall from '../logo-small'
 
 import theme from '../../utils/theme'
 
@@ -25,6 +24,13 @@ const BorderedBox = styled(Box)`
 
 const Anchor = styled.a`
   color: ${props => props.theme.colors.secondary};
+`
+
+const SuperCopy = styled(Copy)`
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
 `
 
 export default ({
@@ -42,35 +48,34 @@ export default ({
   return (
     <FooterWrapper>
       <Container>
-        <BorderedBox display="flex" flexDirection={["column", "column", "column", "row"]} mx={3} py={4} justifyContent="space-between">
-          <Box display="flex" alignItems="center" justifyContent="flex-start" flex={2}>
-            <LogoSmall />
-            <Box ml={3} flex={1}>
-              <Heading color="secondary" fontWeight="bold" level={5} my={1}>{companyName}</Heading>
-              <Copy color="secondary">{companyAddress}</Copy>
-              <Copy color="secondary">{companyPostalCode}, {companyCity}</Copy>
+        <BorderedBox display="flex" flexDirection={["column", "column", "row"]} mx={3} py={4} justifyContent="space-between">
+          <Box display="flex" alignItems="center" justifyContent="flex-start" flex={1}>
+            <Box mb={[3, 3, 0]} flex={1}>
+              <Heading color="secondary" fontWeight="bold" level={5} my={1} fontSize="1rem">{companyName}</Heading>
+              <Copy color="secondary" fontSize="1rem">{companyAddress}</Copy>
+              <Copy color="secondary" fontSize="1rem">{companyPostalCode}, {companyCity}</Copy>
             </Box>
           </Box>
 
-          <Box flex={1} display="flex" alignItems="center" justifyContent="center">
+          <Box flex={1} display="grid" gridTemplateColumn="50% 50%" alignItems={["flex-start", "center"]} justifyContent="center" flexDirection={["column", "row"]}>
             <Box>
-              <Copy color="secondary" m={3} textAlign="center">
+              <SuperCopy color="secondary" mt={3} textAlign="center" fontSize="1rem">
                 <MobileIcon size="lg" color={theme.colors.secondary} style={{ marginRight: '8px' }} />
                 {companyPhone}
-              </Copy>
-              <Copy color="secondary" m={3} textAlign="center">
+              </SuperCopy>
+              <SuperCopy color="secondary" mt={3} textAlign="center" fontSize="1rem">
                 <PhoneIcon size="lg" color={theme.colors.secondary} style={{ marginRight: '8px' }} />
                 {companyPhone2}
-              </Copy>
+              </SuperCopy>
             </Box>
 
             <Box>
-              <Copy color="secondary" m={3} textAlign="center">
+              <SuperCopy color="secondary" mt={3} textAlign="center" fontSize="1rem">
                 <EmailIcon size="lg" color={theme.colors.secondary} style={{ marginRight: '8px' }} />
                 <Anchor href={companyEmail}>{companyEmail}</Anchor>
-              </Copy>
+              </SuperCopy>
 
-              <Box m={3}>
+              <Box mt={3}>
                 <a href={companyFacebookUrl}>
                   <FbIcon size="lg" color={theme.colors.secondary} style={{ marginRight: '16px' }} />
                 </a>
@@ -81,7 +86,7 @@ export default ({
             </Box>
           </Box>
         </BorderedBox>
-        <Copy color="secondary" py={3} px={3} textAlign="center">© {companyName}, {year}</Copy>
+        <Copy color="secondary" py={3} px={3} textAlign="center" fontSize="0.75rem">© {companyName}, {year}</Copy>
       </Container>
     </FooterWrapper>
   )

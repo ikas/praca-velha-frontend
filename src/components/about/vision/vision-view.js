@@ -12,7 +12,9 @@ export default ({ title, html }) => (
     <Heading textAlign="center" mx={3} mt={[6, 7]}>{title}</Heading>
     <Box display="flex" flexDirection={['column', 'row']} px={3}>
       <Box flex={1} display="flex" alignItems="center" justifyContent="center">
-        <VisionImage />
+        <Box width="30%">
+          <VisionImage />
+        </Box>
       </Box>
       <CopyBox
         flex={1}

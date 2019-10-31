@@ -34,7 +34,8 @@ export default ({ mainImage, logoWhite, slug, typologies = [], address, city }) 
       </Box>
       <Box flex={2} ml={2} display="flex" flexDirection="column" alignItems="flex-end">
         <Heading level={3} mt={0} mb={2} color="white">{typologies.join(' | ')}</Heading>
-        <Copy color="white">{address} | {city}</Copy>
+        <Copy color="white">{address}</Copy>
+        <Copy color="white">{city}</Copy>
       </Box>
     </Box>
   </Construction>

@@ -23,7 +23,9 @@ export default ({ location }) => {
 
       <Box bg="primary" px={3}>
         <Container alignItems="center" py={7}>
-          <ContactInfoSVG />
+          <Box width={[340, 488]} height={[330, 474]} pt={[0, 3]}>
+            <ContactInfoSVG width="100%" height="100%" />
+          </Box>
         </Container>
       </Box>
 

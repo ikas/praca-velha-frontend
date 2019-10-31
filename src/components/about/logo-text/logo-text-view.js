@@ -13,7 +13,11 @@ export default ({ html }) => (
       px={3}
       py={[6, 7]}
     >
-      <Box flex={1}><Logo width="75%" /></Box>
+      <Box flex={1} display="flex" alignItems="center" justifyContent="center">
+        <Box width="50%">
+          <Logo />
+        </Box>
+      </Box>
       <CopyBox
         flex={1}
         my={5}

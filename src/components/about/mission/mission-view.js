@@ -19,7 +19,9 @@ export default ({ title, html }) => (
         dangerouslySetInnerHTML={{ __html: html }}
       />
       <Box flex={1} display="flex" alignItems="center" justifyContent="center">
-        <MissionImage />
+        <Box width="30%">
+          <MissionImage />
+        </Box>
       </Box>
     </Box>
   </Container>

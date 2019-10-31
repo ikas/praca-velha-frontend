@@ -13,6 +13,10 @@ const GridItem = styled(Box)`
   width: 33%;
   margin-bottom: ${props => props.theme.space[4]}px;
 
+  @media(max-width: ${props => props.theme.breakpoints.lg}) {
+    width: 50%;
+  }
+
   @media(max-width: ${props => props.theme.breakpoints.md}) {
     width: 100%;
   }

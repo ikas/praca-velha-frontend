@@ -18,7 +18,7 @@ const Image = styled(BackgroundImage)`
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  padding-top: 5rem;
+  padding-top: 3.5rem;
   padding-bottom: 10rem;
 
   @media(max-width: 768px) {
@@ -41,7 +41,7 @@ export default props => {
 
   return (
     <Image fluid={data.file.childImageSharp.fluid} {...props}>
-      <Box width={[250, 400, 500]} height={[150, 250, 300]} pt={[0, 3]}>
+      <Box width={[250]} height={[150]} pt={[0, 3]} style={{ zIndex: 10000 }}>
         <HomeInfoSVG width="100%" height="100%" />
       </Box>
     </Image>

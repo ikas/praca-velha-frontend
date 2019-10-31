@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { space, layout, color, typography } from 'styled-system'
+import { space, layout, color, typography, flex } from 'styled-system'
 
 const Copy = styled.p`
   margin-top: 0;
@@ -13,6 +13,7 @@ const Copy = styled.p`
   ${layout}
   ${color}
   ${typography}
+  ${flex}
 `
 
 export default (props) => <Copy {...props} />
