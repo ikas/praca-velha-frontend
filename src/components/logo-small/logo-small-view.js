@@ -7,7 +7,7 @@ export default () => {
     query {
       file(relativePath: { eq: "logo_vertical.png" }) {
         childImageSharp {
-          fixed(width: 150) {
+          fixed(width: 75) {
             ...GatsbyImageSharpFixed
           }
         }
