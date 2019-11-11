@@ -14,6 +14,11 @@ const Copy = styled.p`
   ${color}
   ${typography}
   ${flex}
+
+  @media(max-width: 544px) {
+    line-height: 1.5rem;
+    font-size: 1.1rem;
+  }
 `
 
 export default (props) => <Copy {...props} />

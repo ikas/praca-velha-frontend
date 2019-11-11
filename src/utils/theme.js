@@ -19,7 +19,7 @@ export default {
     blackSoftShade: 'rgba(34, 34, 34, 0.5)',
     blackVerySoftShade: 'rgba(34, 34, 34, 0.25)',
   },
-  space: [0, 3, 6, 12, 18, 24, 48, 96],
+  space: [0, 3, 6, 12, 18, 24, 48, 96, 144],
   breakpoints,
   zIndexes: {
     header: 9999,

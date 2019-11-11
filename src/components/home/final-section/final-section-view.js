@@ -13,22 +13,25 @@ const Button = styled(Anchor)`
   color: ${props => props.theme.colors.secondary};
   text-decoration: none;
   border: 1px solid ${props => props.theme.colors.secondary};
-  padding: ${props => props.theme.space[5]}px ${props => props.theme.space[7]}px;
+  padding: ${props => props.theme.space[5]}px ${props => props.theme.space[8]}px;
   text-align: center;
   font-weight: bold;
   font-size: 1.6rem;
-  margin-bottom: ${props => props.theme.space[6]}px;
+
+  @media(max-width:1200px) {
+    padding: ${props => props.theme.space[5]}px ${props => props.theme.space[7]}px;
+  }
 `
 
 export default () => {
   const { t } = useTranslation()
   return (
-    <Box bg="primary" px={3} pb={[4, 5, 6, 7]}>
+    <Box bg="primary" px={3} pb={[6, 6, 7]}>
       <Container>
-        <Heading level={2} textAlign="center" color="secondary" py={[4, 5, 6, 7]} my={0}>{t('Home Know More')}</Heading>
+        <Heading level={2} textAlign="center" color="secondary" my={[6, 6, 7]}>{t('Home Know More')}</Heading>
         <Box display="flex" flexDirection={['column', 'column', 'column', 'row']}>
-          <Box flex={1} display="flex" justifyContent="center" mb={[3, 3, 3, 0]}><LogoMedium /></Box>
-          <Box flex={1} flexDirection="column" display="flex" justifyContent="center">
+          <Box display="flex" flex={1} justifyContent="center" mb={[6, 6, 6, 0]}><LogoMedium /></Box>
+          <Box display="grid" flex={1} gridGap={6} justifyContent="center">
             <Button to={t('About URL')}>{t('About')}</Button>
             <Button to={t('Contacts URL')}>{t('Contacts')}</Button>
           </Box>
