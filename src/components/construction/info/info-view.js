@@ -18,17 +18,11 @@ export default ({
   address,
   city,
   firstDescription,
-  price,
+  constructionPrice,
   secondaryImage,
   secondDescription,
   typologies,
 }) => {
-  const { t } = useTranslation()
-  const formattedPrice = parseFloat(Math.round(price * 100) / 100)
-    .toFixed(2)
-    .replace('.', ',')
-    .replace(/^\d\d\d/g, x => x + ' ')
-
   return (
     <Box bg="primary">
       <Container py={7}>
@@ -48,7 +42,7 @@ export default ({
             <Heading color="white" fontWeight="bold" textAlign="center" level={2} my={4}>{typologies.join(' | ')}</Heading>
           </Box>
         </Box>
-        <Heading level={2} color="secondary" mb={0} mt={6} textAlign="center">{t('Construction Price Tag', { price: formattedPrice })}</Heading>
+        <Heading level={2} color="secondary" mb={0} mt={6} textAlign="center">{constructionPrice}</Heading>
       </Container>
     </Box>
   )
