@@ -56,7 +56,7 @@ export const pageQuery = graphql`
       city
       country
       typologies
-      price
+      constructionPrice
       location {
         lat
         lon
