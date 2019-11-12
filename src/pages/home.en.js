@@ -34,7 +34,7 @@ export const pageQuery = graphql`
             }
           }
           logoWhite {
-            fixed(height: 100) {
+            fixed(height: 90) {
               ...GatsbyContentfulFixed
             }
           }

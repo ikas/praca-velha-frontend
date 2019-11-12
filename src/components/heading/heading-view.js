@@ -3,9 +3,9 @@ import styled from 'styled-components'
 import { space, layout, color, typography } from 'styled-system'
 
 const Heading1 = styled.h1`
-  font-size: 3.815rem;
+  font-size: 3.5rem;
   font-family: 'Roboto', sans-serif;
-  line-height: 3.815rem;
+  line-height: 3.5rem;
   font-weight: bold;
   text-transform: uppercase;
   ${space}
