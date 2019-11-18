@@ -8,7 +8,7 @@ import ConstructionImage from '../components/construction/image'
 import ConstructionInfo from '../components/construction/info'
 import ConstructionGallery from '../components/construction/gallery'
 import ConstructionMap from '../components/construction/map'
-import ConstructionForm from '../components/construction/form'
+import Form from '../components/contacts/form'
 import Heading from '../components/heading'
 import Layout from '../components/layout'
 
@@ -33,7 +33,7 @@ class ConstructionContentfulTemplate extends React.Component {
           <ConstructionMap lat={lat} lng={lon} />
         </Box>
 
-        <ConstructionForm />
+        <Form constructionName={construction.name}/>
       </Layout>
     )
   }
