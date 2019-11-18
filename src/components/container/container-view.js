@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { color } from 'styled-system'
 
 import Box from '../box'
 
@@ -9,4 +10,5 @@ export default styled(Box)`
   margin: 0 auto;
   min-width: 320px;
   width: 100%;
+  ${color}
 `

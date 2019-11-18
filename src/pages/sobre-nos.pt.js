@@ -1,27 +1,31 @@
-import React from "react";
-import { graphql } from "gatsby";
+import React from "react"
+import { graphql } from "gatsby"
 
-import AboutFinalText from '../components/about/final-text';
-import AboutImage from '../components/about/image';
-import AboutLogoText from '../components/about/logo-text';
-import AboutMission from '../components/about/mission';
-import AboutTextInBlack from '../components/about/text-in-black';
-import AboutVision from '../components/about/vision';
-import Box from '../components/box';
-import Heading from '../components/heading';
-import Layout from '../components/layout';
-import Separator from '../components/content-separator';
+import AboutFinalText from '../components/about/final-text'
+import AboutImage from '../components/about/image'
+import AboutSection from '../components/about/section'
+import AboutTextInBlack from '../components/about/text-in-black'
+import Box from '../components/box'
+import Heading from '../components/heading'
+import Layout from '../components/layout'
+import Separator from '../components/content-separator'
 
-export default class HomePage extends React.Component {
+import Logo from '../components/logo'
+import MissionImage from '../components/about/mission-image'
+import VisionImage from '../components/about/vision-image'
+
+export default class AboutPage extends React.Component {
   render() {
     const {
       title,
       missionTitle,
       visionTitle,
+      servicesTitle,
       aboutMainText,
       textInBlack,
       missionText,
       visionText,
+      servicesText,
       finalText,
     } = this.props.data.allContentfulAbout.edges[0].node
     return (
@@ -32,13 +36,36 @@ export default class HomePage extends React.Component {
               <Heading color="white">{title}</Heading>
             </Box>
           </AboutImage>
-
-          <AboutLogoText html={aboutMainText.childContentfulRichText.html} />
+          <Box py={4}>
+            <AboutSection
+              html={aboutMainText.childContentfulRichText.html}
+              image={<Logo/>}
+              textRight
+              imageSize={'50%'}
+            />
+          </Box>
           <AboutTextInBlack html={textInBlack.childContentfulRichText.html} />
-          <AboutMission title={missionTitle} html={missionText.childContentfulRichText.html} />
+          <AboutSection 
+            title={missionTitle}
+            html={missionText.childContentfulRichText.html}
+            image={<MissionImage/>}
+            textRight={false}
+          />
           <Separator />
-          <AboutVision title={visionTitle} html={visionText.childContentfulRichText.html} />
-          <Separator />
+          <AboutSection
+            title={visionTitle}
+            html={visionText.childContentfulRichText.html}
+            image={<VisionImage/>}
+            textRight
+          />
+          <AboutSection 
+            title={servicesTitle}
+            html={servicesText.childContentfulRichText.html}
+            image={<Logo/>}
+            theme='inverted'
+            imageSize={'50%'}
+            textRight
+          />
           <AboutFinalText html={finalText.childContentfulRichText.html} />
         </Box>
       </Layout>
@@ -54,6 +81,7 @@ export const pageQuery = graphql`
           title
           missionTitle
           visionTitle
+          servicesTitle
           aboutMainText {
             childContentfulRichText {
               html
@@ -70,6 +98,11 @@ export const pageQuery = graphql`
             }
           }
           visionText {
+            childContentfulRichText {
+              html
+            }
+          }
+          servicesText {
             childContentfulRichText {
               html
             }
