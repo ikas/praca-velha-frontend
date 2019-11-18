@@ -22,4 +22,8 @@ export default createGlobalStyle`
   body a {
     text-decoration: none;
   }
+
+  ul {
+    list-style-type: square;
+  }
 `
