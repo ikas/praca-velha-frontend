@@ -119,7 +119,7 @@ class FormContainer extends React.Component {
         },
         body: JSON.stringify(data)
       };
-      const response = await fetch(process.env.CONTACT_API, requestOptions).then(res => res.json())
+      const response = await fetch("praca-velha-contacts.now.sh", requestOptions).then(res => res.json())
 
       if (response.success) {
         // If success, reset form and inform user
