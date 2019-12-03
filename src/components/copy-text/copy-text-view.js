@@ -16,8 +16,8 @@ const Copy = styled.p`
   ${flex}
 
   @media(max-width: 544px) {
-    line-height: 1.5rem;
-    font-size: 1.1rem;
+    line-height: 1.4rem;
+    font-size: 1rem;
   }
 `
 

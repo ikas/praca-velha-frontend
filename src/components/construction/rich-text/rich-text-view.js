@@ -10,6 +10,13 @@ const StyledBox = styled(Box)`
     line-height: 2.2rem;
     text-align: ${props => props.textAlign};
   }
+
+  @media (max-width: 544px) {
+    & > p {
+      font-size: 1.2rem;
+      line-height: 1.7rem;
+    }
+  }
 `
 
 export default ({ richText, textAlign = 'left' }) => richText

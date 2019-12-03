@@ -28,8 +28,10 @@ class ConstructionContentfulTemplate extends React.Component {
         <ConstructionInfo {...construction} />
         <ConstructionGallery {...construction} />
 
-        <Box py={6} px={3} bg="primary">
-          <Heading textAlign="center" color="secondary" my={6}>{t('Construction Location Heading')}</Heading>
+        <Box py={[5, 6]} px={3} bg="primary">
+          <Heading level={[2, 1]} textAlign="center" color="secondary" my={[5, 6]}>
+            {t('Construction Location Heading')}
+          </Heading>
           <ConstructionMap lat={lat} lng={lon} />
         </Box>
 

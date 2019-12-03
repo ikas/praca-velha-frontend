@@ -45,7 +45,7 @@ export default class AboutPage extends React.Component {
             />
           </Box>
           <AboutTextInBlack html={textInBlack.childContentfulRichText.html} />
-          <AboutSection 
+          <AboutSection
             title={missionTitle}
             html={missionText.childContentfulRichText.html}
             image={<MissionImage/>}
@@ -58,7 +58,7 @@ export default class AboutPage extends React.Component {
             image={<VisionImage/>}
             textRight
           />
-          <AboutSection 
+          <AboutSection
             title={servicesTitle}
             html={servicesText.childContentfulRichText.html}
             image={<Logo/>}

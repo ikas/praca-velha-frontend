@@ -9,7 +9,7 @@ export default ({ html }) => (
     <Container>
       <CopyBox
         color="white"
-        textAlign={["left", "center"]}
+        textAlign="center"
         dangerouslySetInnerHTML={{ __html: html }}
       />
     </Container>

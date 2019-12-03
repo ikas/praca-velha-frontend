@@ -9,6 +9,13 @@ export default styled(Box)`
     font-size: 1.4rem;
   }
 
+  @media (max-width: 544px) {
+    & {
+      line-height: 1.7rem;
+      font-size: 1.2rem;
+    }
+  }
+
   & > p {
     ${typography}
   }

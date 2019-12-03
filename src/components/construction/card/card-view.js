@@ -33,9 +33,9 @@ export default ({ mainImage, logoWhite, slug, typologies = [], address, city }) 
         { logoWhite && <Logo logo={logoWhite.fixed} /> }
       </Box>
       <Box flex={2} ml={2} display="flex" flexDirection="column" alignItems="flex-end">
-        <Heading level={3} mt={0} mb={2} color="white">{typologies.join(' | ')}</Heading>
-        <Copy color="white">{address}</Copy>
-        <Copy color="white">{city}</Copy>
+        <Heading textAlign="right" level={[4, 3]} mt={0} mb={2} color="white">{typologies.join(' | ')}</Heading>
+        <Copy textAlign="right" color="white">{address}</Copy>
+        <Copy textAlign="right" color="white">{city}</Copy>
       </Box>
     </Box>
   </Construction>
