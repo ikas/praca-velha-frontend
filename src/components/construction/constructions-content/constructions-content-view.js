@@ -1,5 +1,6 @@
 import React from "react"
 import { useTranslation } from 'react-i18next'
+import { isMobile } from "react-device-detect"
 
 import Box from '../../box'
 import ConstructionGrid from '../grid'
@@ -16,7 +17,8 @@ export default ({ constructions }) => {
     <>
       <PromoImage>
         <Box bg="primarySoftShade" py={4} alignSelf="stretch" display="flex" justifyContent="center">
-          <Heading color="white">{t('Buildings')}</Heading>
+          { isMobile && <Heading color="white" level={2}>{t('Buildings')}</Heading> }
+          { !isMobile && <Heading color="white">{t('Buildings')}</Heading> }
         </Box>
       </PromoImage>
       <ConstructionGrid title='Home Available Heading' constructions={available} bg="white" />

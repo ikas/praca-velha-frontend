@@ -1,5 +1,6 @@
 import React from "react"
 import { graphql } from "gatsby"
+import { isMobile } from "react-device-detect"
 
 import AboutFinalText from '../components/about/final-text'
 import AboutImage from '../components/about/image'
@@ -32,9 +33,16 @@ export default class AboutPage extends React.Component {
       <Layout location={this.props.location} title={title}>
         <Box bg="#fff">
           <AboutImage>
-            <Box bg="primarySoftShade" py={4} alignSelf="stretch" display="flex" justifyContent="center">
-              <Heading color="white">{title}</Heading>
-            </Box>
+            { isMobile && (
+              <Box bg="primarySoftShade" py={4} alignSelf="stretch" display="flex" justifyContent="center">
+                <Heading color="white" level={2}>{title}</Heading>
+              </Box>
+            )}
+            { !isMobile && (
+              <Box bg="primarySoftShade" py={4} alignSelf="stretch" display="flex" justifyContent="center">
+                <Heading color="white">{title}</Heading>
+              </Box>
+            )}
           </AboutImage>
           <Box py={4}>
             <AboutSection
@@ -45,7 +53,7 @@ export default class AboutPage extends React.Component {
             />
           </Box>
           <AboutTextInBlack html={textInBlack.childContentfulRichText.html} />
-          <AboutSection 
+          <AboutSection
             title={missionTitle}
             html={missionText.childContentfulRichText.html}
             image={<MissionImage/>}
@@ -58,7 +66,7 @@ export default class AboutPage extends React.Component {
             image={<VisionImage/>}
             textRight
           />
-          <AboutSection 
+          <AboutSection
             title={servicesTitle}
             html={servicesText.childContentfulRichText.html}
             image={<Logo/>}

@@ -41,6 +41,7 @@
     "prismjs": "^1.17.1",
     "react": "^16.9.0",
     "react-animated-burgers": "^1.2.7",
+    "react-device-detect": "^1.11.14",
     "react-dom": "^16.9.0",
     "react-grid-gallery": "^0.5.5",
     "react-helmet": "^5.2.1",
