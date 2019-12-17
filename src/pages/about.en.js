@@ -56,14 +56,14 @@ export default class AboutPage extends React.Component {
           <AboutSection
             title={missionTitle}
             html={missionText.childContentfulRichText.html}
-            image={<MissionImage/>}
+            image={!isMobile ? <MissionImage/> : null}
             textRight={false}
           />
           <Separator />
           <AboutSection
             title={visionTitle}
             html={visionText.childContentfulRichText.html}
-            image={<VisionImage/>}
+            image={!isMobile ? <VisionImage/> : null}
             textRight
           />
           <AboutSection
