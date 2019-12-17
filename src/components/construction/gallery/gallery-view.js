@@ -1,5 +1,6 @@
 import React from 'react'
 import { useTranslation } from 'react-i18next'
+import { isMobile } from 'react-device-detect'
 
 import Box from '../../box'
 import Container from '../../container'
@@ -40,7 +41,11 @@ export default ({ mainImage, secondaryImage, images }) => {
   return (
     <Box py={6} px={3}>
       <Container>
-        <Heading level={[2, 1]} textAlign="center" my={[5, 6]}>{t('Construction Gallery Heading')}</Heading>
+        <Heading
+          level={isMobile ? 2 : 1}
+          textAlign="center"
+          my={isMobile ? 6 : 5}
+        >{t('Construction Gallery Heading')}</Heading>
         <ImageGallery images={galleryItems} />
       </Container>
     </Box>

@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import Image from 'gatsby-image'
+import { isMobile } from 'react-device-detect'
 
 import Box from '../../box'
 import Container from '../../container'
@@ -36,20 +37,47 @@ export default ({
         >
           { secondaryImage && <StyledImage fixed={secondaryImage.fixed} /> }
           <Box display="flex" alignItems="center" justifyContent="center">
-            <RichText textAlign={["left", "right"]} richText={firstDescription} />
+            <RichText textAlign={isMobile ? 'center' : 'right'} richText={firstDescription} />
           </Box>
           <Box display="flex" alignItems="center" justifyContent="center">
-            <RichText richText={secondDescription} />
+            <RichText richText={secondDescription} textAlign={isMobile ? 'center' : 'left'} />
           </Box>
           <Box display="flex" flexDirection="column" justifyContent="space-around">
             <Box>
-              <Heading color="white" fontWeight="bold" textAlign="center" level={[4, 3]} my={4}>{address}</Heading>
-              <Heading color="white" fontWeight="bold" textAlign="center" level={[4, 3]} mt={4} mb={2}>{city}</Heading>
+              <Heading
+                color="white"
+                fontWeight="bold"
+                textAlign="center"
+                level={isMobile ? 4 : 3}
+                my={4}
+              >{address}</Heading>
+
+              <Heading
+                color="white"
+                fontWeight="bold"
+                textAlign="center"
+                level={isMobile ? 4 : 3}
+                mt={4}
+                mb={2}
+              >{city}</Heading>
             </Box>
-            <Heading color="white" fontWeight="bold" textAlign="center" level={[3, 2]} my={4}>{typologies.join(' | ')}</Heading>
+
+            <Heading
+              color="white"
+              fontWeight="bold"
+              textAlign="center"
+              level={isMobile ? 3 : 2}
+              my={4}
+            >{typologies.join(' | ')}</Heading>
           </Box>
         </Box>
-        <Heading level={[3, 2]} color="secondary" mb={0} mt={[5, 6]} textAlign="center">{constructionPrice}</Heading>
+        <Heading
+          level={isMobile ? 3 : 2}
+          color="secondary"
+          mb={0}
+          mt={[5, 6]}
+          textAlign="center"
+        >{constructionPrice}</Heading>
       </Container>
     </Box>
   )

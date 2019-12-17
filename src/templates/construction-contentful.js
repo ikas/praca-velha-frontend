@@ -1,6 +1,7 @@
 import React from 'react'
 import { withTranslation } from 'react-i18next';
 import { graphql } from 'gatsby'
+import { isMobile } from 'react-device-detect'
 
 import Box from '../components/box'
 import ConstructionLogoHighlight from '../components/construction/logo-highlight'
@@ -29,7 +30,7 @@ class ConstructionContentfulTemplate extends React.Component {
         <ConstructionGallery {...construction} />
 
         <Box py={[5, 6]} px={3} bg="primary">
-          <Heading level={[2, 1]} textAlign="center" color="secondary" my={[5, 6]}>
+          <Heading level={isMobile ? 2 : 1} textAlign="center" color="secondary" my={[5, 6]}>
             {t('Construction Location Heading')}
           </Heading>
           <ConstructionMap lat={lat} lng={lon} />
