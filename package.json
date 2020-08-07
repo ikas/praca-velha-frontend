@@ -38,7 +38,7 @@
     "gatsby-transformer-remark": "^2.6.14",
     "gatsby-transformer-sharp": "^2.2.6",
     "i18next": "^17.0.12",
-    "prismjs": "^1.17.1",
+    "prismjs": "^1.21.0",
     "react": "^16.9.0",
     "react-animated-burgers": "^1.2.7",
     "react-device-detect": "^1.11.14",
